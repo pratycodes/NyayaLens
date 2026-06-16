@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.DS_Store
+data/processed/
+data/vectorstore/chroma/
+data/sqlite/*.db
+data/sqlite/*.db-*
+!data/processed/.gitkeep
+!data/vectorstore/.gitkeep
+!data/sqlite/.gitkeep
+*.log

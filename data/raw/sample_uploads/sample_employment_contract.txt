@@ -1,0 +1,23 @@
+Employment Agreement
+
+This Employment Agreement is made on 01 April 2025 between Acme Analytics Private Limited and Riya Sharma.
+
+Role: Data Analyst. Place of work: Bengaluru, Karnataka.
+
+Notice Period: The employee shall serve a notice period of 90 days before resignation unless waived in writing by the employer.
+
+Training Bond: The employee agrees that if she resigns within 18 months of joining, the company may recover INR 2,00,000 towards specialized onboarding and training expenses.
+
+Non-Compete: For 12 months after leaving employment, the employee shall not compete with the employer in similar analytics services in India.
+
+Non-Solicit: For 12 months after leaving employment, the employee shall not solicit clients or employees of the company.
+
+Confidentiality: The employee must protect confidential information, client data, pricing, source code, and internal documents during and after employment.
+
+Full-and-Final Settlement: The company may adjust recoveries and pending dues in the full-and-final settlement after the last working day.
+
+Relieving Letter: The relieving letter and experience letter will be issued after completion of exit formalities.
+
+Arbitration: Any dispute may be referred to a sole arbitrator appointed under the agreement.
+
+Jurisdiction: Courts at Bengaluru shall have jurisdiction.
