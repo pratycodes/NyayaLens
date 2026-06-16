@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">NyayaLens Trust panel placeholder</title>
+  <desc id="desc">Synthetic placeholder showing confidence, corpus coverage, and safety status.</desc>
+  <rect width="1200" height="720" fill="#f7f8fb"/>
+  <rect x="54" y="44" width="1092" height="632" rx="18" fill="#ffffff" stroke="#d9deea"/>
+  <text x="88" y="100" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Evaluation / Trust</text>
+  <rect x="88" y="148" width="1018" height="450" rx="12" fill="#fbfcfe" stroke="#d9deea"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="18" fill="#293244">
+    <text x="116" y="202" font-weight="700">Confidence</text><text x="360" y="202">Medium</text>
+    <text x="116" y="258" font-weight="700">Corpus mode</text><text x="360" y="258">Mixed official/demo</text>
+    <text x="116" y="314" font-weight="700">Retrieval mode</text><text x="360" y="314">Hash retrieval</text>
+    <text x="116" y="370" font-weight="700">Human review</text><text x="360" y="370">Needed for arbitration/jurisdiction clause</text>
+    <text x="116" y="426" font-weight="700">Safety status</text><text x="360" y="426">No unsafe user intent detected</text>
+    <text x="116" y="482" font-weight="700">Coverage note</text><text x="360" y="482">Demo/official packs shown with warnings</text>
+  </g>
+</svg>

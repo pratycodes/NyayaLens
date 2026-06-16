@@ -166,6 +166,7 @@
     "amounts": [
       "100000",
       "50,000/-",
+      "50000",
       "75000"
     ],
     "detected_domain": "contract_payment",
@@ -596,12 +597,12 @@
   ],
   "potential_provision_matches": [
     {
-      "match_id": "contract_payment-specific_relief_act_1963-full_act",
+      "match_id": "contract_payment-indian_contract_act_1872-37",
       "legal_area": "contract_payment",
-      "act_name": "Specific Relief Act, 1963",
-      "section_number": "full_act",
-      "section_title": "Specific Relief Act, 1963",
-      "source_quote": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+      "act_name": "Indian Contract Act, 1872",
+      "section_number": "37",
+      "section_title": "Obligation of parties to contracts.—The parties to a contract must either perform, or offer to",
+      "source_quote": "37. Obligation of parties to contracts.—The parties to a contract must either perform, or offer to \nperform, their respective promises, unless such performance is dispensed with or excused under the \nprovisions of this Act, or of any other law. \nPromises bind the representatives of the promisors in case of the death of such promisors before \nperformance, unless a contrary intention appears from the contract. \nIllustrations \n(a) A promises to deliver goods to B on a certain day on payment of Rs. 1,000. A dies before that day. A’s representatives \nare bound to deliver the goods to B, and B is bo",
       "why_relevant": "Potentially relevant to payment, invoice, deduction, or dispute-process review; this is not a finding that any law was broken.",
       "matched_facts": [
         "uploaded document appears to be a freelance/service agreement",
@@ -626,30 +627,30 @@
       "human_review_needed": true,
       "citations": [
         {
-          "source_file": "data/raw/official/contract/A1963-47.pdf",
-          "title": "Specific Relief Act, 1963 - Specific Relief Act, 1963",
+          "source_file": "data/raw/official/contract/A187209.pdf",
+          "title": "Indian Contract Act, 1872 - Obligation of parties to contracts.—The parties to a contract must either perform, or offer to",
           "domain": "contract_payment",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+          "excerpt": "37. Obligation of parties to contracts.—The parties to a contract must either perform, or offer to \nperform, their respective promises, unless such performance is dispensed with or excused under the \nprovisions of this Act, or of any other law. \nPromises bind the representatives of the promisors in case of the death of such promisors before \nperformance, unless a contrary intention appears from the contract. \nIllustrations \n(a) A promises to deliver goods to B on a certain day on payment of Rs. 1,000. A dies before that day. A’s representatives \nare bound to deliver the goods to B, and B is bo",
           "corpus_mode": "official"
         }
       ],
       "corpus_mode": "official",
-      "effective_from": "1964-03-01",
+      "effective_from": "1872-09-01",
       "effective_to": null,
       "version_date": "official_local_file",
       "source_authority": "India Code / Legislative Department",
       "source_url": null
     },
     {
-      "match_id": "contract_payment-specific_relief_act_1963-1",
+      "match_id": "contract_payment-indian_contract_act_1872-39",
       "legal_area": "contract_payment",
-      "act_name": "Specific Relief Act, 1963",
-      "section_number": "1",
-      "section_title": "Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
-      "source_quote": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+      "act_name": "Indian Contract Act, 1872",
+      "section_number": "39",
+      "section_title": "Effect of refusal of party to perform promise wholly.—When a party to a contract has refused",
+      "source_quote": "39. Effect of refusal of party to perform promise wholly.—When a party to a contract has refused \nto perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end \nto the contract, unless he has signified, by words or conduct, his acquiescence in its continuance. \nIllustrations \n(a) A, a singer, enters into a contract with B, the manager of a theatre, to sing at his theatre two nights in every week during \nthe next two months, and B engages to pay her 100 rupees for each night’s performance. On the sixth night A wilfully absents \nherself from the theatr",
       "why_relevant": "Potentially relevant to payment, invoice, deduction, or dispute-process review; this is not a finding that any law was broken.",
       "matched_facts": [
         "uploaded document appears to be a freelance/service agreement",
@@ -674,60 +675,18 @@
       "human_review_needed": true,
       "citations": [
         {
-          "source_file": "data/raw/official/contract/A1963-47.pdf",
-          "title": "Specific Relief Act, 1963 - Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
+          "source_file": "data/raw/official/contract/A187209.pdf",
+          "title": "Indian Contract Act, 1872 - Effect of refusal of party to perform promise wholly.—When a party to a contract has refused",
           "domain": "contract_payment",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+          "excerpt": "39. Effect of refusal of party to perform promise wholly.—When a party to a contract has refused \nto perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end \nto the contract, unless he has signified, by words or conduct, his acquiescence in its continuance. \nIllustrations \n(a) A, a singer, enters into a contract with B, the manager of a theatre, to sing at his theatre two nights in every week during \nthe next two months, and B engages to pay her 100 rupees for each night’s performance. On the sixth night A wilfully absents \nherself from the theatr",
           "corpus_mode": "official"
         }
       ],
       "corpus_mode": "official",
-      "effective_from": "1964-03-01",
-      "effective_to": null,
-      "version_date": "official_local_file",
-      "source_authority": "India Code / Legislative Department",
-      "source_url": null
-    },
-    {
-      "match_id": "labour_classification-osh_working_conditions_code_2020-full_act",
-      "legal_area": "labour_classification",
-      "act_name": "Occupational Safety, Health and Working Conditions Code, 2020",
-      "section_number": "full_act",
-      "section_title": "Occupational Safety, Health and Working Conditions Code, 2020",
-      "source_quote": "THE OCCUPATIONAL SAFETY, HEALTH AND WORKING\nCONDITIONS CODE, 2020\nNO. 37 OF 2020\n[28th September, 2020.]\nAn Act to consolidate and amend the laws regulating the occupational safety, health\nand working conditions of the persons employed in an establishment and for\nmatters connected therewith or incidental thereto.\nBE it enacted by Parliament in the Seventy-first Year of the Republic of India as\nfollows:—\nCHAPTER I\nPRELIMINARY\n1. (1) This Act may be called the Occupational Safety, Health and Working Conditions\nCode, 2020.\n(2) It shall come into force on such date as the Central Government may, b",
-      "why_relevant": "Potentially relevant to worker-classification review; the system does not assume employee or contractor status.",
-      "matched_facts": [
-        "independent contractors",
-        "user role: freelancer"
-      ],
-      "missing_facts": [
-        "working hours",
-        "work location",
-        "degree of company/client control",
-        "supervision/reporting structure",
-        "whether payslips or invoices were issued",
-        "tax/TDS treatment"
-      ],
-      "confidence": "medium",
-      "implication_level": "possible_statutory_non_compliance",
-      "human_review_needed": true,
-      "citations": [
-        {
-          "source_file": "data/raw/official/labour/650059fbb8f1a9.98699174.pdf",
-          "title": "Occupational Safety, Health and Working Conditions Code, 2020 - Occupational Safety, Health and Working Conditions Code, 2020",
-          "domain": "employment",
-          "jurisdiction": "India",
-          "page": null,
-          "chunk_id": null,
-          "excerpt": "THE OCCUPATIONAL SAFETY, HEALTH AND WORKING\nCONDITIONS CODE, 2020\nNO. 37 OF 2020\n[28th September, 2020.]\nAn Act to consolidate and amend the laws regulating the occupational safety, health\nand working conditions of the persons employed in an establishment and for\nmatters connected therewith or incidental thereto.\nBE it enacted by Parliament in the Seventy-first Year of the Republic of India as\nfollows:—\nCHAPTER I\nPRELIMINARY\n1. (1) This Act may be called the Occupational Safety, Health and Working Conditions\nCode, 2020.\n(2) It shall come into force on such date as the Central Government may, b",
-          "corpus_mode": "official"
-        }
-      ],
-      "corpus_mode": "official",
-      "effective_from": "2020-09-29",
+      "effective_from": "1872-09-01",
       "effective_to": null,
       "version_date": "official_local_file",
       "source_authority": "India Code / Legislative Department",
@@ -765,6 +724,48 @@
           "page": null,
           "chunk_id": null,
           "excerpt": "1. (1) This Act may be called the Occupational Safety, Health and Working Conditions\nCode, 2020.\n(2) It shall come into force on such date as the Central Government may, by notification\nappoint; and different dates may be appointed for different provisions of this Code and any\nreference in any such provision to the commencement of this Code shall be construed as a\nreference to the coming into force of that provision.\nShort title,\ncommencement\nand\napplication.\nMINISTRY OF LAW AND JUSTICE\n(Legislative Department)\nNew Delhi, the 29th September, 2020/Asvina 7, 1942 (Saka)\nThe following Act of  Par",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "2020-09-29",
+      "effective_to": null,
+      "version_date": "official_local_file",
+      "source_authority": "India Code / Legislative Department",
+      "source_url": null
+    },
+    {
+      "match_id": "labour_classification-osh_working_conditions_code_2020-2",
+      "legal_area": "labour_classification",
+      "act_name": "Occupational Safety, Health and Working Conditions Code, 2020",
+      "section_number": "2",
+      "section_title": "(1) In this Code, unless the context otherwise requires,—",
+      "source_quote": "2. (1) In this Code, unless the context otherwise requires,—\n(a) \"adolescent\" shall have the same meaning as assigned to it in clause (i) of\nsection 2 of the Child and Adolescent Labour (Prohibition and Regulation) Act, 1986;\n(b) \"adult\" means a person who has completed his eighteenth year of age;\n(c) \"agent\" when used in relation to a mine, means every person, whether\nappointed as such or not, who, acting or purporting to act on behalf of the owner,\ntakes part in the management, control, supervision or direction of such mine or of any\npart thereof;\n(d) \"appropriate Government\" means—\n(i) in r",
+      "why_relevant": "Potentially relevant to worker-classification review; the system does not assume employee or contractor status.",
+      "matched_facts": [
+        "independent contractors",
+        "user role: freelancer"
+      ],
+      "missing_facts": [
+        "working hours",
+        "work location",
+        "degree of company/client control",
+        "supervision/reporting structure",
+        "whether payslips or invoices were issued",
+        "tax/TDS treatment"
+      ],
+      "confidence": "medium",
+      "implication_level": "possible_statutory_non_compliance",
+      "human_review_needed": true,
+      "citations": [
+        {
+          "source_file": "data/raw/official/labour/650059fbb8f1a9.98699174.pdf",
+          "title": "Occupational Safety, Health and Working Conditions Code, 2020 - (1) In this Code, unless the context otherwise requires,—",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "2. (1) In this Code, unless the context otherwise requires,—\n(a) \"adolescent\" shall have the same meaning as assigned to it in clause (i) of\nsection 2 of the Child and Adolescent Labour (Prohibition and Regulation) Act, 1986;\n(b) \"adult\" means a person who has completed his eighteenth year of age;\n(c) \"agent\" when used in relation to a mine, means every person, whether\nappointed as such or not, who, acting or purporting to act on behalf of the owner,\ntakes part in the management, control, supervision or direction of such mine or of any\npart thereof;\n(d) \"appropriate Government\" means—\n(i) in r",
           "corpus_mode": "official"
         }
       ],

@@ -64,6 +64,28 @@ def _candidate_sections(sections: list[LawSection], legal_area: str) -> list[Law
     ]
 
 
+def _has_specific_relief_context(user_text: str, document: DocumentAnalysis) -> bool:
+    haystack = " ".join(
+        [
+            user_text,
+            " ".join(clause.raw_text for clause in document.extracted_clauses),
+        ]
+    ).lower()
+    return any(
+        term in haystack
+        for term in {
+            "injunction",
+            "injunctive relief",
+            "specific performance",
+            "specific relief",
+            "equitable relief",
+            "remedy enforcement",
+            "enforce the agreement",
+            "court order",
+        }
+    )
+
+
 def _implication_level(legal_area: str, matched_facts: list[str]) -> str:
     if not matched_facts:
         return "not_enough_facts"
@@ -126,6 +148,7 @@ def match_potential_provisions(
             legal_area=legal_area,
             state=state,
             dispute_date=dispute_date,
+            remedy_context=_has_specific_relief_context(user_text, document),
         )
         for section in _top_sections_for_area(legal_area, ranked):
             matched = matched_facts_for_area(

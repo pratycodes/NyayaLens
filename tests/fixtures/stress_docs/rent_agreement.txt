@@ -1,0 +1,9 @@
+RENT AGREEMENT
+
+This rent agreement is between Demo Landlord and Demo Tenant for a flat in Demo City.
+Monthly rent is Rs. 25,000.
+Security deposit is two months rent and is refundable after deductions supported by itemized bills.
+Tenant shall give 30 days written notice.
+Landlord may deduct reasonable repair, painting, and cleaning charges for property damage beyond normal wear.
+No eviction shall be done without written notice.
+Courts at Demo City shall have jurisdiction.

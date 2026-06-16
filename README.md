@@ -4,7 +4,22 @@
 
 NyayaLens is a portfolio-grade AI engineering project that turns uploaded contracts, offer letters, service agreements, rent agreements, notices, and plain-text dispute descriptions into a structured, cited analysis report. It extracts key facts, maps them back to document evidence, cross-references local legal source packs, applies deterministic rules, and produces safe next steps without deciding legal liability or outcomes.
 
+**Live demo:** [https://nyayalens.streamlit.app](https://nyayalens.streamlit.app)
+
 > Legal information only, not legal advice. NyayaLens does not create a lawyer-client relationship, file claims, contact authorities, or guarantee outcomes.
+
+> Public demo data notice: screenshots, demo reports, stress fixtures, and sample uploads use synthetic documents only. Do not commit private contracts, signatures, addresses, resumes, or real client/company details.
+
+## Repository Status
+
+| Area | Status |
+| --- | --- |
+| CI | Ruff, pytest, law-pack validation, mixed corpus ingestion, demo report generation, baseline eval, stress eval |
+| Corpus mode | Demo, official, mixed, and user-uploaded modes supported |
+| Default retrieval | Lightweight hash retrieval for offline reproducibility |
+| Optional semantic retrieval | MiniLM through `sentence-transformers` |
+| Default LLM mode | `mock`; no paid API key required |
+| Legal posture | Legal information only, not legal advice |
 
 ## Product Demo
 
@@ -43,17 +58,21 @@ Supported showcase domains:
 
 ## Screenshots
 
-Add GitHub screenshots under `docs/assets/screenshots/` after running the demo:
+The checked-in images are public-safe synthetic placeholders. Replace them with real screenshots from the deployed app after running the demo with synthetic sample documents.
 
-| Screen | Placeholder |
+| Overview | Risks |
 | --- | --- |
-| Overview and key facts | `docs/assets/screenshots/overview.png` |
-| Risk table | `docs/assets/screenshots/risk-table.png` |
-| PDF evidence viewer | `docs/assets/screenshots/document-review.png` |
-| Sources and citations | `docs/assets/screenshots/sources-citations.png` |
-| Law cross-reference | `docs/assets/screenshots/law-cross-reference.png` |
-| Draft and checklist | `docs/assets/screenshots/draft-checklist.png` |
-| Trust panel | `docs/assets/screenshots/trust-panel.png` |
+| ![Overview tab with summary cards and key facts](docs/assets/screenshots/overview.svg) | ![Risks and remedies table](docs/assets/screenshots/risk-table.svg) |
+
+| Document Review | Sources |
+| --- | --- |
+| ![PDF evidence viewer with cited page](docs/assets/screenshots/document-review.svg) | ![Sources and citation tables](docs/assets/screenshots/sources-citations.svg) |
+
+| Law Cross-Reference | Drafts And Trust |
+| --- | --- |
+| ![Potentially implicated provisions table](docs/assets/screenshots/law-cross-reference.svg) | ![Draft checklist and trust panel](docs/assets/screenshots/draft-checklist.svg) |
+
+If an image does not render, see [docs/screenshots.md](docs/screenshots.md) for the capture checklist and expected filenames.
 
 Screenshot guide: [docs/screenshots.md](docs/screenshots.md)
 
@@ -131,6 +150,7 @@ Makefile shortcuts:
 
 ```bash
 make install
+make install-dev
 make ingest
 make law-packs
 make backend
@@ -139,8 +159,12 @@ make test
 make lint
 make demo-reports
 make demo-pdfs
+make stress-eval
+make all-checks
 make clean-local
 ```
+
+Dependency source of truth: runtime dependencies live in `requirements.txt`, developer/test tooling lives in `requirements-dev.txt`, and optional semantic/OCR-style extras live in `requirements-optional.txt`. `pyproject.toml` keeps project metadata, pytest paths, and ruff configuration.
 
 ## Demo Flow
 
@@ -255,6 +279,8 @@ demo_outputs/law_pack_coverage.json
 
 Validation checks parsed title, optional Act number, domain, and current/historical status. Mismatched official files are marked `rejected_metadata_mismatch` and excluded from official law-pack matching.
 
+Official PDFs and generated section-level JSON law packs are committed for reproducible portfolio demos. If you prefer a smaller repository, keep the manifest and source-download workflow, then regenerate with `python scripts/generate_section_law_packs.py` before ingestion.
+
 Current official tenancy coverage includes Maharashtra, Karnataka, Delhi, Punjab, Uttar Pradesh, West Bengal, Rajasthan, and limited Bihar public/government premises rent-eviction coverage. Bihar ordinary private building rent-control coverage is intentionally marked `missing_official` until a verified official source is added.
 
 Criminal-law screening uses the current post-2024 criminal-law packs where available:
@@ -271,9 +297,10 @@ Run:
 
 ```bash
 python scripts/run_eval.py
+python scripts/run_eval.py --scenario-file eval/stress_scenarios.json --output demo_outputs/stress_eval_summary.json
 ```
 
-The suite covers freelance payment, employment exit, unpaid salary/FNF, tenant deposit, repair disputes, unsafe requests, victim/reporting contexts, and document-domain confusion.
+The suites cover freelance payment, employment exit, unpaid salary/FNF, tenant deposit, repair disputes, state-law coverage, OCR/scanned-file warnings, BNS/IPC date routing, unsafe requests, prompt/document injection, fake-law requests, victim/reporting contexts, and document-domain confusion.
 
 Current synthetic eval snapshot:
 
@@ -288,6 +315,22 @@ Current synthetic eval snapshot:
 | False unsafe refusal rate | 0.000 |
 | Unsafe request refusal rate | 1.000 |
 | False tenancy route rate | 0.000 |
+| Raw enum visible count | 0 |
+| Hallucinated section count | 0 |
+
+Current synthetic stress-eval snapshot:
+
+| Metric | Result |
+| --- | ---: |
+| Scenarios passed | 82 / 82 |
+| Issue accuracy | 1.000 |
+| Domain accuracy | 1.000 |
+| False tenancy route count | 0 |
+| Missing official warning accuracy | 1.000 |
+| Fallback pack accuracy | 1.000 |
+| Remedy language accuracy | 1.000 |
+| Raw enum visible count | 0 |
+| Hallucinated section count | 0 |
 
 These are synthetic demo scenarios, not proof of legal correctness.
 
@@ -323,12 +366,24 @@ eval/                synthetic scenario definitions
 
 ## Testing
 
+Install developer tools first:
+
+```bash
+python -m pip install -r requirements-dev.txt
+```
+
 ```bash
 python -m pytest
 python -m ruff check .
 ```
 
-GitHub Actions runs ruff and pytest.
+For a local CI-equivalent pass:
+
+```bash
+make all-checks
+```
+
+GitHub Actions runs ruff, pytest, law-pack validation, mixed corpus ingestion, demo report generation, baseline eval, and stress eval.
 
 ## Safety And Legal Disclaimer
 

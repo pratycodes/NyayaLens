@@ -97,6 +97,10 @@ def _warnings_for_entry(
         warnings.append("Demo placeholder is available but does not replace an official source.")
     if entry.act_id == "bsa_2023" and status != "loaded_official":
         warnings.append(BSA_MISSING_WARNING)
+    if entry.act_id == "up_urban_premises_tenancy_act_2021" and status == "loaded_official":
+        warnings.append(
+            "Uttar Pradesh tenancy pack uses an OCR-derived text companion generated from the official scanned PDF."
+        )
     return sorted(set(warnings))
 
 

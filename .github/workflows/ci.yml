@@ -17,14 +17,33 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
 
       - name: Install requirements
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
+          python -m pip install -r requirements-dev.txt
 
       - name: Lint
         run: python -m ruff check .
 
       - name: Test
         run: python -m pytest
+
+      - name: Validate law packs
+        run: python scripts/ingest_law_packs.py
+
+      - name: Ingest mixed corpus
+        run: python scripts/ingest_corpus.py --corpus-mode mixed
+
+      - name: Generate demo reports
+        run: python scripts/generate_demo_reports.py
+
+      - name: Run baseline evaluation
+        run: python scripts/run_eval.py
+
+      - name: Run stress evaluation
+        run: python scripts/run_eval.py --scenario-file eval/stress_scenarios.json --output demo_outputs/stress_eval_summary.json

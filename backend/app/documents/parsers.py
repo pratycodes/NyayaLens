@@ -15,6 +15,9 @@ class ParsedDocument:
     warnings: list[str]
 
 
+LARGE_PDF_PAGE_WARNING_THRESHOLD = 20
+
+
 def parse_txt(path: Path) -> ParsedDocument:
     text = path.read_text(encoding="utf-8", errors="ignore")
     return ParsedDocument(text=text, page_texts=[(1, text)], warnings=[])
@@ -75,6 +78,20 @@ def _text_quality(text: str) -> float:
     return min(useful / max(len(text), 1), letters / max(len(text), 1) * 4)
 
 
+def _with_pdf_stress_warnings(parsed: ParsedDocument) -> ParsedDocument:
+    warnings = list(parsed.warnings)
+    page_count = len(parsed.page_texts)
+    if page_count > LARGE_PDF_PAGE_WARNING_THRESHOLD:
+        warnings.append(
+            f"Large PDF warning: {page_count} pages; local demo analysis may be slower."
+        )
+    if page_count and not parsed.text.strip():
+        warnings.append(
+            "No extractable PDF text found; OCR may be required for scanned documents."
+        )
+    return ParsedDocument(text=parsed.text, page_texts=parsed.page_texts, warnings=warnings)
+
+
 def _parse_pdf_pdftotext(path: Path) -> ParsedDocument:
     if not shutil.which("pdftotext"):
         raise UnsupportedDocumentError("pdftotext is unavailable.")
@@ -102,29 +119,29 @@ def parse_pdf(path: Path) -> ParsedDocument:
     try:
         parsed = _parse_pdf_pymupdf(path)
         if _text_quality(parsed.text) >= 0.45:
-            return parsed
+            return _with_pdf_stress_warnings(parsed)
         try:
             fallback = _parse_pdf_pdftotext(path)
             if _text_quality(fallback.text) > _text_quality(parsed.text):
-                return fallback
+                return _with_pdf_stress_warnings(fallback)
         except Exception:
-            return parsed
-        return parsed
+            return _with_pdf_stress_warnings(parsed)
+        return _with_pdf_stress_warnings(parsed)
     except Exception:
         try:
             parsed = _parse_pdf_pdfplumber(path)
             if _text_quality(parsed.text) >= 0.45:
-                return parsed
+                return _with_pdf_stress_warnings(parsed)
             try:
                 fallback = _parse_pdf_pdftotext(path)
                 if _text_quality(fallback.text) > _text_quality(parsed.text):
-                    return fallback
+                    return _with_pdf_stress_warnings(fallback)
             except Exception:
-                return parsed
-            return parsed
+                return _with_pdf_stress_warnings(parsed)
+            return _with_pdf_stress_warnings(parsed)
         except Exception as exc:
             try:
-                return _parse_pdf_pdftotext(path)
+                return _with_pdf_stress_warnings(_parse_pdf_pdftotext(path))
             except Exception:
                 raise UnsupportedDocumentError(
                     "PDF parsing failed with PyMuPDF, pdfplumber, and pdftotext. OCR may be required."

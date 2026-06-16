@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">NyayaLens Law Cross-Reference placeholder</title>
+  <desc id="desc">Synthetic placeholder showing potentially relevant provisions.</desc>
+  <rect width="1200" height="720" fill="#f7f8fb"/>
+  <rect x="54" y="44" width="1092" height="632" rx="18" fill="#ffffff" stroke="#d9deea"/>
+  <text x="88" y="100" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Law Cross-Reference</text>
+  <text x="88" y="136" font-family="Inter, Arial, sans-serif" font-size="18" fill="#5b6475">Potentially relevant provisions only. NyayaLens does not determine that a law was broken.</text>
+  <rect x="88" y="180" width="1018" height="350" rx="12" fill="#fbfcfe" stroke="#d9deea"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="15" fill="#293244">
+    <text x="112" y="220" font-weight="700">Legal area</text><text x="330" y="220" font-weight="700">Potential source</text><text x="650" y="220" font-weight="700">Why relevant</text><text x="970" y="220" font-weight="700">Review</text>
+    <line x1="104" y1="240" x2="1090" y2="240" stroke="#d9deea"/>
+    <text x="112" y="280">Contract payment</text><text x="330" y="280">Indian Contract Act</text><text x="650" y="280">Payment/invoice review</text><text x="970" y="280">Yes</text>
+    <text x="112" y="334">Dispute process</text><text x="330" y="334">Arbitration Act</text><text x="650" y="334">Arbitration clause found</text><text x="970" y="334">Yes</text>
+    <text x="112" y="388">Classification</text><text x="330" y="388">Labour classification</text><text x="650" y="388">Independent contractor clause</text><text x="970" y="388">Yes</text>
+  </g>
+</svg>

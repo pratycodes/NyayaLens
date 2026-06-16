@@ -245,12 +245,12 @@
   ],
   "potential_provision_matches": [
     {
-      "match_id": "tenancy_deposit-karnataka_rent_act_1999-full_act",
+      "match_id": "tenancy_deposit-karnataka_rent_act_1999-3",
       "legal_area": "tenancy_deposit",
       "act_name": "Karnataka Rent Act, 1999",
-      "section_number": "full_act",
-      "section_title": "Karnataka Rent Act, 1999",
-      "source_quote": "                                602\n\n             KARNATAKA ACT NO 34 OF 2001\n\n       THE KARNATAKA RENT ACT, 1999\n\n                     Arrangement of Sections\nSections :\n                          CHAPTER - I\n                         PRELIMINARY\n  1.   Short title, extent and commencement\n  2.   Application of the Act\n  3.   Definitions\n                          CHAPTER - II\n                     REGULATION OF RENT\n  4.   Tenancy agreement to be in writing\n  5.   Inheritability of tenancy\n  6.   Rent payable\n  7.   Standard rent\n  8.   Other charges payable\n  9.   Revision of rent in certain c",
+      "section_number": "3",
+      "section_title": "Definitions.- In this Act, unless the context otherwise",
+      "source_quote": "3. Definitions.- In this Act, unless the context otherwise\nrequires,-\n  (a) \"building\" means any building or hut or part of a building\nor hut other than a farm house, let or to be let separately and\nincludes,-\n        (i)   the garden, grounds and out-houses, if any\n              appurtenant to such building, hut or part of such\n              building or hut and let or to be let along with such\n              building or hut or part of building or hut;\n\n                                   613\n\n        (ii)    any furniture or equipment supplied by the landlord\n                for the use in such",
       "why_relevant": "Potentially relevant to security deposit and itemized deduction review.",
       "matched_facts": [
         "repair charges from the security deposit only with itemized bills and photos",
@@ -269,12 +269,12 @@
       "citations": [
         {
           "source_file": "data/raw/official/tenancy/34 of 2001 (E).pdf",
-          "title": "Karnataka Rent Act, 1999 - Karnataka Rent Act, 1999",
+          "title": "Karnataka Rent Act, 1999 - Definitions.- In this Act, unless the context otherwise",
           "domain": "tenancy_deposit",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "                                602\n\n             KARNATAKA ACT NO 34 OF 2001\n\n       THE KARNATAKA RENT ACT, 1999\n\n                     Arrangement of Sections\nSections :\n                          CHAPTER - I\n                         PRELIMINARY\n  1.   Short title, extent and commencement\n  2.   Application of the Act\n  3.   Definitions\n                          CHAPTER - II\n                     REGULATION OF RENT\n  4.   Tenancy agreement to be in writing\n  5.   Inheritability of tenancy\n  6.   Rent payable\n  7.   Standard rent\n  8.   Other charges payable\n  9.   Revision of rent in certain c",
+          "excerpt": "3. Definitions.- In this Act, unless the context otherwise\nrequires,-\n  (a) \"building\" means any building or hut or part of a building\nor hut other than a farm house, let or to be let separately and\nincludes,-\n        (i)   the garden, grounds and out-houses, if any\n              appurtenant to such building, hut or part of such\n              building or hut and let or to be let along with such\n              building or hut or part of building or hut;\n\n                                   613\n\n        (ii)    any furniture or equipment supplied by the landlord\n                for the use in such",
           "corpus_mode": "official"
         }
       ],
@@ -286,12 +286,12 @@
       "source_url": null
     },
     {
-      "match_id": "tenancy_deposit-karnataka_rent_act_1999-2",
+      "match_id": "tenancy_deposit-karnataka_rent_act_1999-4",
       "legal_area": "tenancy_deposit",
       "act_name": "Karnataka Rent Act, 1999",
-      "section_number": "2",
-      "section_title": "Application of the Act.- (1) Chapters-I to III and",
-      "source_quote": "2. Application of the Act.- (1) Chapters-I to III and\nChapter-V to VIII of this Act shall apply to areas specified in\nthe First Schedule.\n  (2) Chapters I, and IV shall apply only to areas specified\nin the Second Schedule.",
+      "section_number": "4",
+      "section_title": "Tenancy agreement to be in writing.- (1)",
+      "source_quote": "4. Tenancy agreement to be in writing.- (1)\nNotwithstanding anything contained in section 107 of the Transfer\nof Property Act, 1882 (Central Act 4 of 1882), no person shall,\nafter the commencement of this Act, let or take on rent any\npremises except by an agreement in writing.\n   (2) Where in relation to a tenancy created before the\ncommencement of this Act no agreement in writing was entered\ninto the landlord and the tenant shall enter into an agreement in\nwriting with regard to the tenancy and deposit a copy of thereof\nbefore the prescribed authority.\n        Provided that where the landlord",
       "why_relevant": "Potentially relevant to security deposit and itemized deduction review.",
       "matched_facts": [
         "repair charges from the security deposit only with itemized bills and photos",
@@ -310,12 +310,12 @@
       "citations": [
         {
           "source_file": "data/raw/official/tenancy/34 of 2001 (E).pdf",
-          "title": "Karnataka Rent Act, 1999 - Application of the Act.- (1) Chapters-I to III and",
+          "title": "Karnataka Rent Act, 1999 - Tenancy agreement to be in writing.- (1)",
           "domain": "tenancy_deposit",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "2. Application of the Act.- (1) Chapters-I to III and\nChapter-V to VIII of this Act shall apply to areas specified in\nthe First Schedule.\n  (2) Chapters I, and IV shall apply only to areas specified\nin the Second Schedule.",
+          "excerpt": "4. Tenancy agreement to be in writing.- (1)\nNotwithstanding anything contained in section 107 of the Transfer\nof Property Act, 1882 (Central Act 4 of 1882), no person shall,\nafter the commencement of this Act, let or take on rent any\npremises except by an agreement in writing.\n   (2) Where in relation to a tenancy created before the\ncommencement of this Act no agreement in writing was entered\ninto the landlord and the tenant shall enter into an agreement in\nwriting with regard to the tenancy and deposit a copy of thereof\nbefore the prescribed authority.\n        Provided that where the landlord",
           "corpus_mode": "official"
         }
       ],

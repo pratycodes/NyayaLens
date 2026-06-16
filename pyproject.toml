@@ -3,11 +3,13 @@ name = "nyayalens"
 version = "0.1.0"
 description = "Explainable Legal-Rights Agent for Indian Employment Exit and Tenancy Disputes"
 requires-python = ">=3.11"
+# Dependency source of truth is requirements*.txt so Streamlit Cloud and local
+# setup use the same lightweight install path.
 dependencies = []
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
-testpaths = ["backend/tests"]
+testpaths = ["backend/tests", "tests"]
 addopts = "-q"
 
 [tool.ruff]

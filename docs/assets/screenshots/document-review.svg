@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">NyayaLens Document Review placeholder</title>
+  <desc id="desc">Synthetic placeholder showing PDF page rendering and important sections.</desc>
+  <rect width="1200" height="720" fill="#f7f8fb"/>
+  <rect x="54" y="44" width="1092" height="632" rx="18" fill="#ffffff" stroke="#d9deea"/>
+  <text x="88" y="100" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Document Review</text>
+  <rect x="88" y="138" width="590" height="500" rx="14" fill="#fdfefe" stroke="#cfd7e6"/>
+  <rect x="150" y="176" width="466" height="424" fill="#ffffff" stroke="#d9deea"/>
+  <text x="186" y="220" font-family="Georgia, serif" font-size="20" fill="#172033">FREELANCE SERVICE AGREEMENT</text>
+  <line x1="186" y1="250" x2="560" y2="250" stroke="#d9deea"/>
+  <rect x="184" y="316" width="358" height="30" fill="#ffe58f" opacity="0.65"/>
+  <text x="186" y="338" font-family="Georgia, serif" font-size="16" fill="#293244">Payment shall be made in the last week...</text>
+  <text x="186" y="388" font-family="Georgia, serif" font-size="16" fill="#293244">TDS will be deducted as applicable.</text>
+  <text x="186" y="438" font-family="Georgia, serif" font-size="16" fill="#293244">Disputes may be referred to arbitration.</text>
+  <text x="304" y="626" font-family="Inter, Arial, sans-serif" font-size="15" fill="#526070">Page 2 of 6</text>
+  <rect x="720" y="138" width="386" height="500" rx="14" fill="#fbfcfe" stroke="#d9deea"/>
+  <text x="748" y="184" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#172033">Important sections</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="16" fill="#293244">
+    <text x="748" y="238">Payment or consideration</text><text x="1010" y="238">p.2</text>
+    <text x="748" y="286">Invoice timing</text><text x="1010" y="286">p.2</text>
+    <text x="748" y="334">TDS / deduction</text><text x="1010" y="334">p.3</text>
+    <text x="748" y="382">Independent contractor</text><text x="1010" y="382">p.4</text>
+    <text x="748" y="430">Arbitration</text><text x="1010" y="430">p.5</text>
+    <text x="748" y="478">Jurisdiction</text><text x="1010" y="478">p.5</text>
+  </g>
+</svg>

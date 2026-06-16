@@ -274,7 +274,9 @@
       "data/raw/official/tenancy/up_urban_premises_tenancy_act_2021.pdf",
       "data/raw/official/tenancy/up_urban_premises_tenancy_act_2021_ocr.txt"
     ],
-    "warnings": [],
+    "warnings": [
+      "Uttar Pradesh tenancy pack uses an OCR-derived text companion generated from the official scanned PDF."
+    ],
     "required_for_official_mode": true,
     "corpus_mode": "official",
     "historical": false

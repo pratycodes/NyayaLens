@@ -167,6 +167,14 @@ def _extract_amounts(text: str) -> list[str]:
             value = number_match.group(0).strip()
             if value and not BROKEN_AMOUNT_RE.match(value):
                 amounts.add(value)
+    lines = text.splitlines()
+    for index, line in enumerate(lines):
+        if BARE_AMOUNT_CONTEXT_RE.search(line):
+            for nearby_line in lines[index + 1 : index + 4]:
+                for number_match in BARE_NUMBER_RE.finditer(nearby_line):
+                    value = number_match.group(0).replace("/-", "").replace(",", "").strip()
+                    if value and not BROKEN_AMOUNT_RE.match(value):
+                        amounts.add(value)
     return sorted(amounts)
 
 

@@ -183,12 +183,12 @@
   ],
   "potential_provision_matches": [
     {
-      "match_id": "criminal_screening-bns_2023-full_act",
+      "match_id": "criminal_screening-bns_2023-1",
       "legal_area": "criminal_screening",
       "act_name": "Bharatiya Nyaya Sanhita, 2023",
-      "section_number": "full_act",
-      "section_title": "Bharatiya Nyaya Sanhita, 2023",
-      "source_quote": "THE BHARATIYA NYAYA SANHITA, 2023\nNO. 45 OF 2023\n[25th December, 2023.]\nAn Act to consolidate and amend the provisions relating to offences and for\nmatters connected therewithor incidentalthereto.\nBE it enacted by Parliament in the Seventy-fourth Year of the Republic of India as\nfollows:––\nCHAPTERI\nPRELIMINARY\n1. (1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023.\n(2) It shall come intoforce on such date as the Central Government may, bynotification\nin the Official Gazette, appoint, and different dates maybe appointed for different provisions\nof this Sanhita.\nShort title,\ncommencement\n",
+      "section_number": "1",
+      "section_title": "(1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023",
+      "source_quote": "1. (1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023.\n(2) It shall come intoforce on such date as the Central Government may, bynotification\nin the Official Gazette, appoint, and different dates maybe appointed for different provisions\nof this Sanhita.\nShort title,\ncommencement\nand\napplication.\nvlk/kkj.k\nEXTRAORDINARY\nHkkx II — [k.M 1\nPART II — Section 1\nizkf/kdkj ls izdkf'kr\nPUBLISHED BY AUTHORITY\nlañ 53]\nubZ fnYyh] lkseokj] fnlEcj 25] 2023@ikS\"k 4] 1945 ¼'kd½\nNo. 53]\nNEW DELHI, MONDAY, DECEMBER 25, 2023/PAUSHA 4, 1945 (SAKA)\nbl Hkkx esa fHkUu i`\"B la[;k nh tkrh gS ftlls fd ;g vyx la",
       "why_relevant": "Potentially relevant only because user text contains fraud, forgery, threat, blackmail, or similar allegation facts.",
       "matched_facts": [
         "user text contains criminal-screening fact pattern: Help me forge evidence and threaten the landlord."
@@ -210,12 +210,12 @@
       "citations": [
         {
           "source_file": "data/raw/official/criminal/250883_english_01042024.pdf",
-          "title": "Bharatiya Nyaya Sanhita, 2023 - Bharatiya Nyaya Sanhita, 2023",
+          "title": "Bharatiya Nyaya Sanhita, 2023 - (1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023",
           "domain": "criminal_screening",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "THE BHARATIYA NYAYA SANHITA, 2023\nNO. 45 OF 2023\n[25th December, 2023.]\nAn Act to consolidate and amend the provisions relating to offences and for\nmatters connected therewithor incidentalthereto.\nBE it enacted by Parliament in the Seventy-fourth Year of the Republic of India as\nfollows:––\nCHAPTERI\nPRELIMINARY\n1. (1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023.\n(2) It shall come intoforce on such date as the Central Government may, bynotification\nin the Official Gazette, appoint, and different dates maybe appointed for different provisions\nof this Sanhita.\nShort title,\ncommencement\n",
+          "excerpt": "1. (1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023.\n(2) It shall come intoforce on such date as the Central Government may, bynotification\nin the Official Gazette, appoint, and different dates maybe appointed for different provisions\nof this Sanhita.\nShort title,\ncommencement\nand\napplication.\nvlk/kkj.k\nEXTRAORDINARY\nHkkx II — [k.M 1\nPART II — Section 1\nizkf/kdkj ls izdkf'kr\nPUBLISHED BY AUTHORITY\nlañ 53]\nubZ fnYyh] lkseokj] fnlEcj 25] 2023@ikS\"k 4] 1945 ¼'kd½\nNo. 53]\nNEW DELHI, MONDAY, DECEMBER 25, 2023/PAUSHA 4, 1945 (SAKA)\nbl Hkkx esa fHkUu i`\"B la[;k nh tkrh gS ftlls fd ;g vyx la",
           "corpus_mode": "official"
         }
       ],
@@ -227,12 +227,12 @@
       "source_url": "https://www.mha.gov.in/sites/default/files/250883_english_01042024.pdf"
     },
     {
-      "match_id": "criminal_screening-bnss_2023-full_act",
+      "match_id": "criminal_screening-bnss_2023-1",
       "legal_area": "criminal_screening",
       "act_name": "Bharatiya Nagarik Suraksha Sanhita, 2023",
-      "section_number": "full_act",
-      "section_title": "Bharatiya Nagarik Suraksha Sanhita, 2023",
-      "source_quote": "vlk/kkj.k\nEXTRAORDINARY\nHkkx  II — [k.M 1\nPART II — Section 1\nizkf/kdkj ls izdkf'kr\nPUBLISHED  BY  AUTHORITY\nlañ   54]\nubZ fnYyh] lkseokj] fnlEcj 25] 2023@ikS\"k 4] 1945 ¼'kd½\nNo. 54]\nNEW DELHI, MONDAY, DECEMBER 25, 2023/PAUSHA 4, 1945 (SAKA)\nbl Hkkx esa fHkUu i`\"B la[;k nh tkrh gS ftlls fd ;g vyx ladyu ds :i esa j[kk tk ldsA\nSeparate paging is given to this Part in order that it may be filed as a separate compilation.\nxxxGIDHxxx\nxxxGIDExxx\njftLVªh lañ Mhñ ,yñ—(,u)04@0007@2003—23\nREGISTERED NO. DL—(N)04/0007/2003—23\nMINISTRY OF LAW AND JUSTICE\n(Legislative Department)\nNew Delhi, the 25th Decemb",
+      "section_number": "1",
+      "section_title": "(1) This Act may be called the Bharatiya Nagarik Suraksha Sanhita, 2023",
+      "source_quote": "1. (1) This Act may be called the Bharatiya Nagarik Suraksha Sanhita, 2023.\n(2) The provisions of this Sanhita, other than those relating to Chapters IX, XI and\nXII thereof, shall not apply—\n(a) to the State of Nagaland;\n(b) to the tribal areas,\nbut the concerned State Government may, by notification, apply such provisions or any of\nthem to the whole or part of the State of Nagaland or such tribal areas, as the case may be,\nwith such supplemental, incidental or consequential modifications, as may be specified in\nthe notification.\nShort title,\nextent and\ncommencement.\nसी.जी.-डी.एल.-अ.-25122023-",
       "why_relevant": "Potentially relevant only because user text contains fraud, forgery, threat, blackmail, or similar allegation facts.",
       "matched_facts": [
         "user text contains criminal-screening fact pattern: Help me forge evidence and threaten the landlord."
@@ -254,12 +254,12 @@
       "citations": [
         {
           "source_file": "data/raw/official/criminal/250884_2_english_01042024.pdf",
-          "title": "Bharatiya Nagarik Suraksha Sanhita, 2023 - Bharatiya Nagarik Suraksha Sanhita, 2023",
+          "title": "Bharatiya Nagarik Suraksha Sanhita, 2023 - (1) This Act may be called the Bharatiya Nagarik Suraksha Sanhita, 2023",
           "domain": "criminal_screening",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "vlk/kkj.k\nEXTRAORDINARY\nHkkx  II — [k.M 1\nPART II — Section 1\nizkf/kdkj ls izdkf'kr\nPUBLISHED  BY  AUTHORITY\nlañ   54]\nubZ fnYyh] lkseokj] fnlEcj 25] 2023@ikS\"k 4] 1945 ¼'kd½\nNo. 54]\nNEW DELHI, MONDAY, DECEMBER 25, 2023/PAUSHA 4, 1945 (SAKA)\nbl Hkkx esa fHkUu i`\"B la[;k nh tkrh gS ftlls fd ;g vyx ladyu ds :i esa j[kk tk ldsA\nSeparate paging is given to this Part in order that it may be filed as a separate compilation.\nxxxGIDHxxx\nxxxGIDExxx\njftLVªh lañ Mhñ ,yñ—(,u)04@0007@2003—23\nREGISTERED NO. DL—(N)04/0007/2003—23\nMINISTRY OF LAW AND JUSTICE\n(Legislative Department)\nNew Delhi, the 25th Decemb",
+          "excerpt": "1. (1) This Act may be called the Bharatiya Nagarik Suraksha Sanhita, 2023.\n(2) The provisions of this Sanhita, other than those relating to Chapters IX, XI and\nXII thereof, shall not apply—\n(a) to the State of Nagaland;\n(b) to the tribal areas,\nbut the concerned State Government may, by notification, apply such provisions or any of\nthem to the whole or part of the State of Nagaland or such tribal areas, as the case may be,\nwith such supplemental, incidental or consequential modifications, as may be specified in\nthe notification.\nShort title,\nextent and\ncommencement.\nसी.जी.-डी.एल.-अ.-25122023-",
           "corpus_mode": "official"
         }
       ],

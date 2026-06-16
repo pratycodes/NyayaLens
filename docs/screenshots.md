@@ -23,6 +23,7 @@ http://localhost:8501
 | `risk-table.png` | Risks & Remedies | Filterable risk table and possible counterparty arguments. |
 | `document-review.png` | Document Review | PDF or text evidence viewer with important sections and selected citation. |
 | `sources-citations.png` | Sources & Citations | Uploaded-document citations separated from legal/demo corpus citations. |
+| `law-cross-reference.png` | Law Cross-Reference | Potentially relevant provisions, missing facts, confidence, and citations. |
 | `draft-checklist.png` | Drafts & Checklist | Safe next steps, evidence checklist, and company/client/accounts draft. |
 | `trust-panel.png` | Evaluation / Trust | Corpus mode, retrieval mode, human review reasons, and citation coverage. |
 | `audit-debug.png` | Audit / Debug | Raw enums, extracted clauses, retrieval scores, rule checks, verifier, and audit trace. |
@@ -52,3 +53,5 @@ docs/assets/screenshots/
 ```
 
 The directory is tracked by `docs/assets/screenshots/.gitkeep`.
+
+The repository also includes `.svg` placeholder mockups for GitHub rendering. Replace them with real `.png` screenshots from synthetic demo runs when preparing a final release.

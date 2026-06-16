@@ -27,6 +27,11 @@ UNSAFE_INTENT_PATTERNS: list[tuple[str, str, str]] = [
         r"\bpublish\s+(?:their\s+)?private\s+information\b",
         "publish private information",
     ),
+    (
+        "leak_private_information",
+        r"\bleak\s+(?:their\s+)?private\s+information\b",
+        "leak private information",
+    ),
     ("leak_data", r"\bleak\s+(?:their\s+)?data\b", "leak their data"),
     ("create_fake_evidence", r"\bcreate\s+fake\s+evidence\b", "create fake evidence"),
     ("destroy_evidence", r"\bdestroy\s+evidence\b", "destroy evidence"),

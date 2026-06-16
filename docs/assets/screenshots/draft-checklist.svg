@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">NyayaLens Drafts and Checklist placeholder</title>
+  <desc id="desc">Synthetic placeholder showing safe next steps, evidence checklist, and draft message.</desc>
+  <rect width="1200" height="720" fill="#f7f8fb"/>
+  <rect x="54" y="44" width="1092" height="632" rx="18" fill="#ffffff" stroke="#d9deea"/>
+  <text x="88" y="100" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Drafts &amp; Checklist</text>
+  <rect x="88" y="148" width="450" height="450" rx="12" fill="#fbfcfe" stroke="#d9deea"/>
+  <text x="116" y="192" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#172033">Evidence checklist</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="17" fill="#293244">
+    <text x="116" y="244">[ ] Service agreement</text>
+    <text x="116" y="286">[ ] Invoice or payment request</text>
+    <text x="116" y="328">[ ] Proof of work delivered</text>
+    <text x="116" y="370">[ ] Payment reminders</text>
+    <text x="116" y="412">[ ] Bank records</text>
+    <text x="116" y="454">[ ] TDS/deduction communication</text>
+  </g>
+  <rect x="576" y="148" width="530" height="450" rx="12" fill="#fbfcfe" stroke="#d9deea"/>
+  <text x="604" y="192" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#172033">Safe draft message</text>
+  <text x="604" y="242" font-family="Inter, Arial, sans-serif" font-size="17" fill="#293244">Dear Company/Client/Accounts Team,</text>
+  <text x="604" y="292" font-family="Inter, Arial, sans-serif" font-size="17" fill="#293244">Please share a written update on the pending payment,</text>
+  <text x="604" y="324" font-family="Inter, Arial, sans-serif" font-size="17" fill="#293244">expected payment date, and any deduction or adjustment.</text>
+  <text x="604" y="390" font-family="Inter, Arial, sans-serif" font-size="17" fill="#293244">Regards,</text>
+  <text x="604" y="422" font-family="Inter, Arial, sans-serif" font-size="17" fill="#293244">Demo Freelancer</text>
+</svg>

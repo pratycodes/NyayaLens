@@ -1,0 +1,13 @@
+FREELANCING AGREEMENT
+
+BETWEEN Acme Demo Services LLP AND Demo Freelancer as a Freelancer.
+Designation will be Project Manager.
+
+Compensation Table
+Month  Initial Compensation  Revised Compensation
+Month 1  100000  75000
+Month 2  50,000/-  60000
+
+Invoice shall be generated 7 days prior to month end.
+Payment shall be made in the last week of the month.
+The relationship is independent contractor.

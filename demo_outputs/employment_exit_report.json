@@ -458,12 +458,12 @@
   ],
   "potential_provision_matches": [
     {
-      "match_id": "employment_contract-specific_relief_act_1963-full_act",
+      "match_id": "employment_contract-indian_contract_act_1872-37",
       "legal_area": "employment_contract",
-      "act_name": "Specific Relief Act, 1963",
-      "section_number": "full_act",
-      "section_title": "Specific Relief Act, 1963",
-      "source_quote": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+      "act_name": "Indian Contract Act, 1872",
+      "section_number": "37",
+      "section_title": "Obligation of parties to contracts.—The parties to a contract must either perform, or offer to",
+      "source_quote": "37. Obligation of parties to contracts.—The parties to a contract must either perform, or offer to \nperform, their respective promises, unless such performance is dispensed with or excused under the \nprovisions of this Act, or of any other law. \nPromises bind the representatives of the promisors in case of the death of such promisors before \nperformance, unless a contrary intention appears from the contract. \nIllustrations \n(a) A promises to deliver goods to B on a certain day on payment of Rs. 1,000. A dies before that day. A’s representatives \nare bound to deliver the goods to B, and B is bo",
       "why_relevant": "Potentially relevant to employment contract.",
       "matched_facts": [],
       "missing_facts": [
@@ -474,30 +474,30 @@
       "human_review_needed": true,
       "citations": [
         {
-          "source_file": "data/raw/official/contract/A1963-47.pdf",
-          "title": "Specific Relief Act, 1963 - Specific Relief Act, 1963",
+          "source_file": "data/raw/official/contract/A187209.pdf",
+          "title": "Indian Contract Act, 1872 - Obligation of parties to contracts.—The parties to a contract must either perform, or offer to",
           "domain": "contract_payment",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+          "excerpt": "37. Obligation of parties to contracts.—The parties to a contract must either perform, or offer to \nperform, their respective promises, unless such performance is dispensed with or excused under the \nprovisions of this Act, or of any other law. \nPromises bind the representatives of the promisors in case of the death of such promisors before \nperformance, unless a contrary intention appears from the contract. \nIllustrations \n(a) A promises to deliver goods to B on a certain day on payment of Rs. 1,000. A dies before that day. A’s representatives \nare bound to deliver the goods to B, and B is bo",
           "corpus_mode": "official"
         }
       ],
       "corpus_mode": "official",
-      "effective_from": "1964-03-01",
+      "effective_from": "1872-09-01",
       "effective_to": null,
       "version_date": "official_local_file",
       "source_authority": "India Code / Legislative Department",
       "source_url": null
     },
     {
-      "match_id": "employment_contract-specific_relief_act_1963-1",
+      "match_id": "employment_contract-indian_contract_act_1872-39",
       "legal_area": "employment_contract",
-      "act_name": "Specific Relief Act, 1963",
-      "section_number": "1",
-      "section_title": "Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
-      "source_quote": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+      "act_name": "Indian Contract Act, 1872",
+      "section_number": "39",
+      "section_title": "Effect of refusal of party to perform promise wholly.—When a party to a contract has refused",
+      "source_quote": "39. Effect of refusal of party to perform promise wholly.—When a party to a contract has refused \nto perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end \nto the contract, unless he has signified, by words or conduct, his acquiescence in its continuance. \nIllustrations \n(a) A, a singer, enters into a contract with B, the manager of a theatre, to sing at his theatre two nights in every week during \nthe next two months, and B engages to pay her 100 rupees for each night’s performance. On the sixth night A wilfully absents \nherself from the theatr",
       "why_relevant": "Potentially relevant to employment contract.",
       "matched_facts": [],
       "missing_facts": [
@@ -508,30 +508,30 @@
       "human_review_needed": true,
       "citations": [
         {
-          "source_file": "data/raw/official/contract/A1963-47.pdf",
-          "title": "Specific Relief Act, 1963 - Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
+          "source_file": "data/raw/official/contract/A187209.pdf",
+          "title": "Indian Contract Act, 1872 - Effect of refusal of party to perform promise wholly.—When a party to a contract has refused",
           "domain": "contract_payment",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+          "excerpt": "39. Effect of refusal of party to perform promise wholly.—When a party to a contract has refused \nto perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end \nto the contract, unless he has signified, by words or conduct, his acquiescence in its continuance. \nIllustrations \n(a) A, a singer, enters into a contract with B, the manager of a theatre, to sing at his theatre two nights in every week during \nthe next two months, and B engages to pay her 100 rupees for each night’s performance. On the sixth night A wilfully absents \nherself from the theatr",
           "corpus_mode": "official"
         }
       ],
       "corpus_mode": "official",
-      "effective_from": "1964-03-01",
+      "effective_from": "1872-09-01",
       "effective_to": null,
       "version_date": "official_local_file",
       "source_authority": "India Code / Legislative Department",
       "source_url": null
     },
     {
-      "match_id": "contract_payment-specific_relief_act_1963-full_act",
+      "match_id": "contract_payment-indian_contract_act_1872-37",
       "legal_area": "contract_payment",
-      "act_name": "Specific Relief Act, 1963",
-      "section_number": "full_act",
-      "section_title": "Specific Relief Act, 1963",
-      "source_quote": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+      "act_name": "Indian Contract Act, 1872",
+      "section_number": "37",
+      "section_title": "Obligation of parties to contracts.—The parties to a contract must either perform, or offer to",
+      "source_quote": "37. Obligation of parties to contracts.—The parties to a contract must either perform, or offer to \nperform, their respective promises, unless such performance is dispensed with or excused under the \nprovisions of this Act, or of any other law. \nPromises bind the representatives of the promisors in case of the death of such promisors before \nperformance, unless a contrary intention appears from the contract. \nIllustrations \n(a) A promises to deliver goods to B on a certain day on payment of Rs. 1,000. A dies before that day. A’s representatives \nare bound to deliver the goods to B, and B is bo",
       "why_relevant": "Potentially relevant to payment, invoice, deduction, or dispute-process review; this is not a finding that any law was broken.",
       "matched_facts": [
         "user text: Company is withholding salary and asking for bond recovery."
@@ -551,30 +551,30 @@
       "human_review_needed": true,
       "citations": [
         {
-          "source_file": "data/raw/official/contract/A1963-47.pdf",
-          "title": "Specific Relief Act, 1963 - Specific Relief Act, 1963",
+          "source_file": "data/raw/official/contract/A187209.pdf",
+          "title": "Indian Contract Act, 1872 - Obligation of parties to contracts.—The parties to a contract must either perform, or offer to",
           "domain": "contract_payment",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+          "excerpt": "37. Obligation of parties to contracts.—The parties to a contract must either perform, or offer to \nperform, their respective promises, unless such performance is dispensed with or excused under the \nprovisions of this Act, or of any other law. \nPromises bind the representatives of the promisors in case of the death of such promisors before \nperformance, unless a contrary intention appears from the contract. \nIllustrations \n(a) A promises to deliver goods to B on a certain day on payment of Rs. 1,000. A dies before that day. A’s representatives \nare bound to deliver the goods to B, and B is bo",
           "corpus_mode": "official"
         }
       ],
       "corpus_mode": "official",
-      "effective_from": "1964-03-01",
+      "effective_from": "1872-09-01",
       "effective_to": null,
       "version_date": "official_local_file",
       "source_authority": "India Code / Legislative Department",
       "source_url": null
     },
     {
-      "match_id": "contract_payment-specific_relief_act_1963-1",
+      "match_id": "contract_payment-indian_contract_act_1872-39",
       "legal_area": "contract_payment",
-      "act_name": "Specific Relief Act, 1963",
-      "section_number": "1",
-      "section_title": "Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
-      "source_quote": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+      "act_name": "Indian Contract Act, 1872",
+      "section_number": "39",
+      "section_title": "Effect of refusal of party to perform promise wholly.—When a party to a contract has refused",
+      "source_quote": "39. Effect of refusal of party to perform promise wholly.—When a party to a contract has refused \nto perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end \nto the contract, unless he has signified, by words or conduct, his acquiescence in its continuance. \nIllustrations \n(a) A, a singer, enters into a contract with B, the manager of a theatre, to sing at his theatre two nights in every week during \nthe next two months, and B engages to pay her 100 rupees for each night’s performance. On the sixth night A wilfully absents \nherself from the theatr",
       "why_relevant": "Potentially relevant to payment, invoice, deduction, or dispute-process review; this is not a finding that any law was broken.",
       "matched_facts": [
         "user text: Company is withholding salary and asking for bond recovery."
@@ -594,18 +594,18 @@
       "human_review_needed": true,
       "citations": [
         {
-          "source_file": "data/raw/official/contract/A1963-47.pdf",
-          "title": "Specific Relief Act, 1963 - Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
+          "source_file": "data/raw/official/contract/A187209.pdf",
+          "title": "Indian Contract Act, 1872 - Effect of refusal of party to perform promise wholly.—When a party to a contract has refused",
           "domain": "contract_payment",
           "jurisdiction": "India",
           "page": null,
           "chunk_id": null,
-          "excerpt": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+          "excerpt": "39. Effect of refusal of party to perform promise wholly.—When a party to a contract has refused \nto perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end \nto the contract, unless he has signified, by words or conduct, his acquiescence in its continuance. \nIllustrations \n(a) A, a singer, enters into a contract with B, the manager of a theatre, to sing at his theatre two nights in every week during \nthe next two months, and B engages to pay her 100 rupees for each night’s performance. On the sixth night A wilfully absents \nherself from the theatr",
           "corpus_mode": "official"
         }
       ],
       "corpus_mode": "official",
-      "effective_from": "1964-03-01",
+      "effective_from": "1872-09-01",
       "effective_to": null,
       "version_date": "official_local_file",
       "source_authority": "India Code / Legislative Department",

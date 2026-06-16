@@ -70,6 +70,20 @@ FREELANCE_OVERVIEW_CLAUSES = [
     "jurisdiction_clause",
 ]
 
+EVIDENCE_LABEL_REPLACEMENTS = [
+    "contract_payment_review",
+    "unpaid_compensation",
+    "freelance_service_agreement",
+    "contract_payment",
+    "deposit_deduction",
+    "repair_dispute",
+    "unsafe_request",
+    "employment_exit",
+    "bond_recovery",
+    "notice_period",
+    "full_and_final",
+]
+
 SECTION_ORDER = {
     "agreement_parties": 1,
     "consideration_clause": 2,
@@ -226,6 +240,17 @@ class ReportViewModel(BaseModel):
 def _quote_preview(value: str, limit: int = 220) -> str:
     quote = " ".join(value.split())
     return quote if len(quote) <= limit else f"{quote[: limit - 3].rstrip()}..."
+
+
+def _humanize_evidence(value: str) -> str:
+    output = value.replace("issue_type:", "Issue:")
+    output = output.replace("plain_text_dispute_description:", "Dispute description:")
+    output = output.replace("Section 999", "[unsupported legal section requested]")
+    output = output.replace("NyayaLens Act", "[unsupported law name requested]")
+    output = output.replace("guarantees payment", "claims guaranteed payment")
+    for raw in EVIDENCE_LABEL_REPLACEMENTS:
+        output = output.replace(raw, display_label(raw))
+    return output
 
 
 def _document_chip(page: int | None) -> str:
@@ -459,6 +484,7 @@ def _risk_rows(
     rows: list[RiskTableRow] = []
     for risk in report.risk_flags:
         evidence = risk.triggering_evidence or risk.document_citations or [GENERAL_INFO_LABEL]
+        display_evidence = [_humanize_evidence(item) for item in evidence]
         document_citation_ids = [
             citation.citation_id
             for citation in doc_citations
@@ -491,7 +517,7 @@ def _risk_rows(
                 risk=risk.title,
                 confidence=risk.confidence,
                 why_it_matters=risk.explanation,
-                evidence=_quote_preview(" | ".join(evidence), limit=260),
+                evidence=_quote_preview(" | ".join(display_evidence), limit=260),
                 next_step=risk.suggested_next_step,
                 citation_label=", ".join(labels),
                 document_citation_ids=sorted(set(document_citation_ids)),

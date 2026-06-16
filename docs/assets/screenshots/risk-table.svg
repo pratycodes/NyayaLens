@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">NyayaLens Risks and Remedies placeholder</title>
+  <desc id="desc">Synthetic placeholder showing a filterable risk table.</desc>
+  <rect width="1200" height="720" fill="#f7f8fb"/>
+  <rect x="54" y="44" width="1092" height="632" rx="18" fill="#ffffff" stroke="#d9deea"/>
+  <text x="88" y="100" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Risks &amp; Remedies</text>
+  <text x="88" y="136" font-family="Inter, Arial, sans-serif" font-size="18" fill="#5b6475">Risk rows are evidence-linked and use cautious legal-information wording.</text>
+  <rect x="88" y="178" width="1018" height="64" rx="12" fill="#fbfcfe" stroke="#d9deea"/>
+  <text x="112" y="218" font-family="Inter, Arial, sans-serif" font-size="16" fill="#526070">Severity: All</text>
+  <text x="284" y="218" font-family="Inter, Arial, sans-serif" font-size="16" fill="#526070">Search: payment</text>
+  <text x="492" y="218" font-family="Inter, Arial, sans-serif" font-size="16" fill="#526070">Only document-cited risks: off</text>
+  <rect x="88" y="274" width="1018" height="300" rx="10" fill="#fbfcfe" stroke="#d9deea"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="15" fill="#293244">
+    <text x="112" y="314" font-weight="700">Severity</text><text x="220" y="314" font-weight="700">Risk</text><text x="548" y="314" font-weight="700">Evidence</text><text x="790" y="314" font-weight="700">Next step</text><text x="1010" y="314" font-weight="700">View</text>
+    <line x1="104" y1="334" x2="1090" y2="334" stroke="#d9deea"/>
+    <text x="112" y="372" fill="#a33b22">High</text><text x="220" y="372">Unpaid compensation/payment issue</text><text x="548" y="372">Document p.2</text><text x="790" y="372">Ask for written payment status</text><text x="1010" y="372">Open</text>
+    <text x="112" y="426" fill="#8a6218">Medium</text><text x="220" y="426">TDS/deduction clarification needed</text><text x="548" y="426">Document p.3</text><text x="790" y="426">Request itemized calculation</text><text x="1010" y="426">Open</text>
+    <text x="112" y="480" fill="#8a6218">Medium</text><text x="220" y="480">Arbitration may affect path</text><text x="548" y="480">Document p.5</text><text x="790" y="480">Human legal review</text><text x="1010" y="480">Open</text>
+  </g>
+</svg>
