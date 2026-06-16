@@ -2,13 +2,22 @@
 
 **Evidence-grounded legal issue triage and document review for Indian employment, freelance-payment, and tenancy disputes.**
 
-NyayaLens is a portfolio-grade AI engineering project that turns uploaded contracts, offer letters, service agreements, rent agreements, notices, and plain-text dispute descriptions into a structured, cited analysis report. It extracts key facts, maps them back to document evidence, cross-references local legal source packs, applies deterministic rules, and produces safe next steps without deciding legal liability or outcomes.
+NyayaLens is a portfolio-grade AI engineering project that turns uploaded
+contracts, offer letters, service agreements, rent agreements, notices, and
+plain-text dispute descriptions into a structured, cited analysis report.
+It extracts key facts, maps them back to document evidence, cross-references
+local legal source packs, applies deterministic rules, and produces safe next
+steps without deciding legal liability or outcomes.
 
 **Live demo:** [https://nyayalens.streamlit.app](https://nyayalens.streamlit.app)
 
-> Legal information only, not legal advice. NyayaLens does not create a lawyer-client relationship, file claims, contact authorities, or guarantee outcomes.
+> Legal information only, not legal advice. NyayaLens does not create a
+> lawyer-client relationship, file claims, contact authorities, or guarantee
+> outcomes.
 
-> Public demo data notice: screenshots, demo reports, stress fixtures, and sample uploads use synthetic documents only. Do not commit private contracts, signatures, addresses, resumes, or real client/company details.
+> Public demo data notice: screenshots, demo reports, stress fixtures, and
+> sample uploads use synthetic documents only. Do not commit private contracts,
+> signatures, addresses, resumes, or real client/company details.
 
 ## Repository Status
 
@@ -40,37 +49,64 @@ Upload document or describe dispute
 
 Supported showcase domains:
 
-- **Freelance/service payment:** unpaid compensation, invoice timing, payment timing, TDS/deduction, independent contractor relationship, arbitration, jurisdiction.
-- **Employment exit:** notice period, bond/training recovery, unpaid salary/FNF, relieving letter, non-compete/non-solicit, confidentiality, arbitration, jurisdiction.
+- **Freelance/service payment:** unpaid compensation, invoice timing, payment
+  timing, TDS/deduction, independent contractor relationship, arbitration, and
+  jurisdiction.
+- **Employment exit:** notice period, bond/training recovery, unpaid
+  salary/FNF, relieving letter, non-compete/non-solicit, confidentiality,
+  arbitration, and jurisdiction.
 - **Tenant-landlord:** security deposit, eviction notice, rent increase, repairs/maintenance, lock-in, notice period, harassment redirect, jurisdiction.
 
 ## Portfolio Highlights
 
-- **Document intelligence:** PDF/DOCX/TXT parsing, clause extraction, party/date/amount detection, document-type classification, key facts, and page-level citations.
-- **Issue-domain consistency engine:** prevents embarrassing false routes such as TDS deduction becoming security deposit deduction, contract damages becoming repair disputes, or harassment text inside a document becoming unsafe user intent.
-- **Law-pack cross-reference engine:** maps issues to section-level metadata and reports potentially relevant provisions, implication level, missing facts, citations, and human-review need.
+- **Document intelligence:** PDF/DOCX/TXT parsing, clause extraction,
+  party/date/amount detection, document-type classification, key facts, and
+  page-level citations.
+- **Issue-domain consistency engine:** prevents embarrassing false routes such
+  as TDS deduction becoming security deposit deduction, contract damages
+  becoming repair disputes, or harassment text inside a document becoming
+  unsafe user intent.
+- **Law-pack cross-reference engine:** maps issues to section-level metadata
+  and reports potentially relevant provisions, implication level, missing
+  facts, citations, and human-review need.
 - **Deterministic rules plus RAG:** local retrieval informs context, while rule checks produce explainable risk flags and missing-fact prompts.
 - **PDF evidence viewer:** Streamlit UI renders uploaded PDF pages locally and highlights cited text when available.
 - **Route-aware remedy planner:** freelance, employment, and tenancy reports use different next steps, evidence checklists, and draft language.
-- **Safety guardrails:** refuses requests for threats, blackmail, forged evidence, impersonation, illegal lock-breaking, or harassment while allowing victim/reporting contexts.
+- **Safety guardrails:** refuses requests for threats, blackmail, forged
+  evidence, impersonation, illegal lock-breaking, or harassment while allowing
+  victim/reporting contexts.
 - **Privacy-first mock mode:** default demo works with no paid API key, no Docker, no GPU, no local LLM download, and `EMBEDDING_BACKEND=hash`.
 - **Evaluation and auditability:** synthetic eval suite, verifier checks, trust panel, law-pack coverage report, and node-level audit traces.
 
 ## Screenshots
 
-The checked-in images are public-safe synthetic placeholders. Replace them with real screenshots from the deployed app after running the demo with synthetic sample documents.
+The checked-in images are public-safe synthetic placeholders. Replace them with
+real screenshots from the deployed app after running the demo with synthetic
+sample documents.
 
-| Overview | Risks |
-| --- | --- |
-| ![Overview tab with summary cards and key facts](docs/assets/screenshots/overview.svg) | ![Risks and remedies table](docs/assets/screenshots/risk-table.svg) |
+- Overview and key facts
 
-| Document Review | Sources |
-| --- | --- |
-| ![PDF evidence viewer with cited page](docs/assets/screenshots/document-review.svg) | ![Sources and citation tables](docs/assets/screenshots/sources-citations.svg) |
+  ![Overview tab](docs/assets/screenshots/overview.svg)
 
-| Law Cross-Reference | Drafts And Trust |
-| --- | --- |
-| ![Potentially implicated provisions table](docs/assets/screenshots/law-cross-reference.svg) | ![Draft checklist and trust panel](docs/assets/screenshots/draft-checklist.svg) |
+- Risks and remedies
+
+  ![Risks and remedies table](docs/assets/screenshots/risk-table.svg)
+
+- Document review
+
+  ![PDF evidence viewer](docs/assets/screenshots/document-review.svg)
+
+- Sources and citations
+
+  ![Sources and citation tables](docs/assets/screenshots/sources-citations.svg)
+
+- Law cross-reference
+
+  ![Potentially implicated provisions](docs/assets/screenshots/law-cross-reference.svg)
+
+- Draft and checklist
+
+  ![Draft checklist](docs/assets/screenshots/draft-checklist.svg)
 
 If an image does not render, see [docs/screenshots.md](docs/screenshots.md) for the capture checklist and expected filenames.
 
@@ -164,7 +200,10 @@ make all-checks
 make clean-local
 ```
 
-Dependency source of truth: runtime dependencies live in `requirements.txt`, developer/test tooling lives in `requirements-dev.txt`, and optional semantic/OCR-style extras live in `requirements-optional.txt`. `pyproject.toml` keeps project metadata, pytest paths, and ruff configuration.
+Dependency source of truth: runtime dependencies live in `requirements.txt`,
+developer/test tooling lives in `requirements-dev.txt`, and optional
+semantic/OCR-style extras live in `requirements-optional.txt`.
+`pyproject.toml` keeps project metadata, pytest paths, and ruff configuration.
 
 ## Demo Flow
 
@@ -220,7 +259,9 @@ ALLOW_REMOTE_LLM=false
 EMBEDDING_BACKEND=hash
 ```
 
-Mock mode uses lightweight hashing retrieval for offline reproducibility. Hashing retrieval is not semantic embedding search. Semantic retrieval is available through `sentence-transformers`.
+Mock mode uses lightweight hashing retrieval for offline reproducibility.
+Hashing retrieval is not semantic embedding search. Semantic retrieval is
+available through `sentence-transformers`.
 
 Optional MiniLM retrieval:
 
@@ -241,7 +282,9 @@ LLM_PROVIDER=openai
 ALLOW_REMOTE_LLM=true
 ```
 
-Remote LLM usage is off by default. Even when configured, Streamlit requires the per-analysis checkbox **Allow remote LLM for this analysis** before document excerpts are sent to a provider.
+Remote LLM usage is off by default. Even when configured, Streamlit requires
+the per-analysis checkbox **Allow remote LLM for this analysis** before
+document excerpts are sent to a provider.
 
 ## Legal Corpus And Law Packs
 
@@ -277,11 +320,20 @@ demo_outputs/law_pack_validation.json
 demo_outputs/law_pack_coverage.json
 ```
 
-Validation checks parsed title, optional Act number, domain, and current/historical status. Mismatched official files are marked `rejected_metadata_mismatch` and excluded from official law-pack matching.
+Validation checks parsed title, optional Act number, domain, and
+current/historical status. Mismatched official files are marked
+`rejected_metadata_mismatch` and excluded from official law-pack matching.
 
-Official PDFs and generated section-level JSON law packs are committed for reproducible portfolio demos. If you prefer a smaller repository, keep the manifest and source-download workflow, then regenerate with `python scripts/generate_section_law_packs.py` before ingestion.
+Official PDFs and generated section-level JSON law packs are committed for
+reproducible portfolio demos. If you prefer a smaller repository, keep the
+manifest and source-download workflow, then regenerate with
+`python scripts/generate_section_law_packs.py` before ingestion.
 
-Current official tenancy coverage includes Maharashtra, Karnataka, Delhi, Punjab, Uttar Pradesh, West Bengal, Rajasthan, and limited Bihar public/government premises rent-eviction coverage. Bihar ordinary private building rent-control coverage is intentionally marked `missing_official` until a verified official source is added.
+Current official tenancy coverage includes Maharashtra, Karnataka, Delhi,
+Punjab, Uttar Pradesh, West Bengal, Rajasthan, and limited Bihar
+public/government premises rent-eviction coverage. Bihar ordinary private
+building rent-control coverage is intentionally marked `missing_official`
+until a verified official source is added.
 
 Criminal-law screening uses the current post-2024 criminal-law packs where available:
 
@@ -300,7 +352,10 @@ python scripts/run_eval.py
 python scripts/run_eval.py --scenario-file eval/stress_scenarios.json --output demo_outputs/stress_eval_summary.json
 ```
 
-The suites cover freelance payment, employment exit, unpaid salary/FNF, tenant deposit, repair disputes, state-law coverage, OCR/scanned-file warnings, BNS/IPC date routing, unsafe requests, prompt/document injection, fake-law requests, victim/reporting contexts, and document-domain confusion.
+The suites cover freelance payment, employment exit, unpaid salary/FNF, tenant
+deposit, repair disputes, state-law coverage, OCR/scanned-file warnings,
+BNS/IPC date routing, unsafe requests, prompt/document injection, fake-law
+requests, victim/reporting contexts, and document-domain confusion.
 
 Current synthetic eval snapshot:
 
@@ -398,7 +453,11 @@ The app uses cautious language:
 - not enough facts
 - human legal review needed
 
-The app refuses requests involving forged evidence, threats, blackmail, impersonation, illegal lock-breaking, harassment, or unlawful pressure tactics. Blocking safety checks inspect active user intent, not uploaded document text or retrieved corpus chunks. Victim reports such as "my employer is harassing me" are not automatically refused.
+The app refuses requests involving forged evidence, threats, blackmail,
+impersonation, illegal lock-breaking, harassment, or unlawful pressure tactics.
+Blocking safety checks inspect active user intent, not uploaded document text
+or retrieved corpus chunks. Victim reports such as "my employer is harassing
+me" are not automatically refused.
 
 Exact legal provisions should appear only when present in retrieved source text. Deterministic-only risk statements are labeled as general information.
 

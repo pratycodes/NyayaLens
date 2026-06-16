@@ -1,4 +1,25 @@
-.PHONY: install install-dev install-optional ingest law-packs section-law-packs backend frontend test lint demo-reports demo-pdfs stress-docs stress-eval public-smoke ui-test e2e-local load-local all-checks clean-local reset
+.PHONY: \
+	install \
+	install-dev \
+	install-optional \
+	ingest \
+	law-packs \
+	section-law-packs \
+	backend \
+	frontend \
+	test \
+	lint \
+	demo-reports \
+	demo-pdfs \
+	stress-docs \
+	stress-eval \
+	public-smoke \
+	ui-test \
+	e2e-local \
+	load-local \
+	all-checks \
+	clean-local \
+	reset
 
 install:
 	python -m pip install -r requirements.txt

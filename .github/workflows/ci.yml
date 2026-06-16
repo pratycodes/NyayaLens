@@ -46,4 +46,7 @@ jobs:
         run: python scripts/run_eval.py
 
       - name: Run stress evaluation
-        run: python scripts/run_eval.py --scenario-file eval/stress_scenarios.json --output demo_outputs/stress_eval_summary.json
+        run: |
+          python scripts/run_eval.py \
+            --scenario-file eval/stress_scenarios.json \
+            --output demo_outputs/stress_eval_summary.json
