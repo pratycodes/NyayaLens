@@ -1,0 +1,26 @@
+{
+  "pack_id": "demo_public_law_pack",
+  "title": "Demo Public Law / Constitution Law Pack",
+  "corpus_mode": "demo",
+  "version_date": "2026-01-01",
+  "sections": [
+    {
+      "act_name": "DEMO Constitution / Public Law Principles",
+      "act_id": "demo_constitution_public_law",
+      "section_number": "DEMO-PUBLIC-LAW-STATE-ACTION",
+      "section_title": "Public authority or state-action review",
+      "chapter": "Demo public law triage",
+      "text": "DEMO LAW PACK: Simplified educational placeholder. Replace with official constitutional/public-law sources before real-world use. Use public-law screening only when a government department, public official, statutory authority, state action, public benefit, or fundamental-rights style allegation is involved.",
+      "jurisdiction": "India",
+      "state": null,
+      "domain": "constitution_public_law",
+      "issue_tags": ["constitution_public_law", "public_authority_abuse", "grievance", "state_action"],
+      "effective_from": "1950-01-26",
+      "effective_to": null,
+      "version_date": "2026-01-01",
+      "source_authority": "Demo placeholder law pack",
+      "source_url": null,
+      "corpus_mode": "demo"
+    }
+  ]
+}

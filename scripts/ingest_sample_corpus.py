@@ -11,5 +11,5 @@ if str(ROOT) not in sys.path:
 from backend.app.corpus.ingest import ingest_corpus
 
 if __name__ == "__main__":
-    chunks = ingest_corpus(include_demo=True)
+    chunks = ingest_corpus(include_demo=True, corpus_mode="demo")
     print(f"Ingested {len(chunks)} corpus chunks.")

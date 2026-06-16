@@ -9,6 +9,7 @@ from backend.app.core.schemas import (
     FinalReport,
     IssueAnalysis,
     JurisdictionResult,
+    PotentialProvisionMatch,
     RemedyPlan,
     RetrievedSource,
     RiskFlag,
@@ -31,6 +32,7 @@ class AnalysisState(TypedDict, total=False):
     jurisdiction: JurisdictionResult
     expert_route: ExpertRoute
     retrieved_sources: list[RetrievedSource]
+    potential_provision_matches: list[PotentialProvisionMatch]
     rule_results: list[RuleResult]
     risk_flags: list[RiskFlag]
     remedy_plan: RemedyPlan

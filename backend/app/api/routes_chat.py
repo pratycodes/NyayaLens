@@ -25,8 +25,8 @@ def chat(request: ChatRequest) -> ChatResponse:
     analysis = get_analysis(request.analysis_id)
     if analysis is None:
         raise HTTPException(status_code=404, detail="analysis_id not found")
-    unsafe, _matches = detect_unsafe_request(request.question)
-    if unsafe:
+    safety = detect_unsafe_request(request.question)
+    if safety.is_unsafe_intent:
         return ChatResponse(answer=SAFE_REFUSAL)
     missing = ", ".join(analysis.get("missing_facts", [])[:6]) or "none listed"
     return ChatResponse(

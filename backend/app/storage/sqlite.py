@@ -54,9 +54,12 @@ def initialize_database() -> None:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 analysis_id TEXT NOT NULL,
                 node_name TEXT NOT NULL,
+                started_at TEXT,
+                duration_ms REAL,
                 input_summary TEXT,
                 output_summary TEXT,
                 warnings_json TEXT,
+                error TEXT,
                 timestamp TEXT
             );
 
@@ -74,6 +77,17 @@ def initialize_database() -> None:
             );
             """
         )
+        existing_columns = {
+            row["name"]
+            for row in conn.execute("PRAGMA table_info(audit_trace)").fetchall()
+        }
+        for column_name, definition in {
+            "started_at": "TEXT",
+            "duration_ms": "REAL",
+            "error": "TEXT",
+        }.items():
+            if column_name not in existing_columns:
+                conn.execute(f"ALTER TABLE audit_trace ADD COLUMN {column_name} {definition}")
 
 
 def save_upload_metadata(
@@ -134,15 +148,18 @@ def save_analysis(report: FinalReport, *, upload_id: str | None = None, filename
             conn.execute(
                 """
                 INSERT INTO audit_trace
-                (analysis_id, node_name, input_summary, output_summary, warnings_json, timestamp)
-                VALUES (?, ?, ?, ?, ?, ?)
+                (analysis_id, node_name, started_at, duration_ms, input_summary, output_summary, warnings_json, error, timestamp)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     report.analysis_id,
                     entry.node_name,
+                    entry.started_at.isoformat(),
+                    entry.duration_ms,
                     entry.input_summary,
                     entry.output_summary,
                     json.dumps(entry.warnings),
+                    entry.error,
                     entry.timestamp.isoformat(),
                 ),
             )
@@ -160,6 +177,7 @@ def get_analysis(analysis_id: str) -> dict[str, Any] | None:
 def save_corpus_chunks(chunks: list[StoredCorpusChunk]) -> None:
     initialize_database()
     with get_connection() as conn:
+        conn.execute("DELETE FROM corpus_chunks")
         for chunk in chunks:
             conn.execute(
                 """
@@ -185,6 +203,12 @@ def save_corpus_chunks(chunks: list[StoredCorpusChunk]) -> None:
                             "title": chunk.title,
                             "page": chunk.page,
                             "chunk_id": chunk.chunk_id,
+                            "corpus_mode": chunk.corpus_mode,
+                            "source_authority": chunk.source_authority,
+                            "source_url": chunk.source_url,
+                            "state": chunk.state,
+                            "effective_date": chunk.effective_date,
+                            "version_date": chunk.version_date,
                         }
                     ),
                 ),
@@ -196,24 +220,33 @@ def load_corpus_chunks() -> list[StoredCorpusChunk]:
     with get_connection() as conn:
         rows = conn.execute(
             """
-            SELECT chunk_id, text, source_file, domain, jurisdiction, document_type, title, page
+            SELECT chunk_id, text, source_file, domain, jurisdiction, document_type, title, page, metadata_json
             FROM corpus_chunks
             ORDER BY source_file, chunk_id
             """
         ).fetchall()
-    return [
-        StoredCorpusChunk(
-            chunk_id=row["chunk_id"],
-            text=row["text"],
-            source_file=row["source_file"],
-            domain=row["domain"] or "general",
-            jurisdiction=row["jurisdiction"] or "India",
-            document_type=row["document_type"] or "general_information",
-            title=row["title"] or row["source_file"],
-            page=row["page"],
+    chunks: list[StoredCorpusChunk] = []
+    for row in rows:
+        metadata = json.loads(row["metadata_json"] or "{}")
+        chunks.append(
+            StoredCorpusChunk(
+                chunk_id=row["chunk_id"],
+                text=row["text"],
+                source_file=row["source_file"],
+                domain=row["domain"] or "general",
+                jurisdiction=row["jurisdiction"] or "India",
+                document_type=row["document_type"] or "general_information",
+                title=row["title"] or row["source_file"],
+                page=row["page"],
+                corpus_mode=metadata.get("corpus_mode", "demo"),
+                source_authority=metadata.get("source_authority"),
+                source_url=metadata.get("source_url"),
+                state=metadata.get("state"),
+                effective_date=metadata.get("effective_date"),
+                version_date=metadata.get("version_date"),
+            )
         )
-        for row in rows
-    ]
+    return chunks
 
 
 def corpus_status() -> tuple[int, list[str]]:

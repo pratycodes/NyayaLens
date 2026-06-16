@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 import json
+import logging
+from contextlib import suppress
 
 from backend.app.config import get_settings
 from backend.app.retrieval.embeddings import cosine_similarity, get_embedding_model
 from backend.app.storage.models import StoredCorpusChunk
+
+LOGGER = logging.getLogger(__name__)
 
 
 class ChromaStore:
@@ -15,6 +19,8 @@ class ChromaStore:
         self.fallback_path = self.settings.chroma_persist_dir / "fallback_store.json"
         self._client = None
         self._collection = None
+        if self.settings.embedding_backend.lower() == "hash":
+            return
         try:
             import chromadb  # type: ignore
 
@@ -23,9 +29,22 @@ class ChromaStore:
                 "nyayalens_law_chunks",
                 embedding_function=None,
             )
-        except Exception:
+        except Exception as exc:
+            LOGGER.warning("ChromaDB unavailable; using JSON vector fallback: %s", exc)
             self._client = None
             self._collection = None
+
+    def reset(self) -> None:
+        if self.fallback_path.exists():
+            self.fallback_path.unlink()
+        if self._client is None:
+            return
+        with suppress(Exception):
+            self._client.delete_collection("nyayalens_law_chunks")
+        self._collection = self._client.get_or_create_collection(
+            "nyayalens_law_chunks",
+            embedding_function=None,
+        )
 
     def upsert_chunks(self, chunks: list[StoredCorpusChunk]) -> None:
         if not chunks:
@@ -40,6 +59,12 @@ class ChromaStore:
                 "title": chunk.title,
                 "page": chunk.page,
                 "chunk_id": chunk.chunk_id,
+                "corpus_mode": chunk.corpus_mode,
+                "source_authority": chunk.source_authority,
+                "source_url": chunk.source_url,
+                "state": chunk.state,
+                "effective_date": chunk.effective_date,
+                "version_date": chunk.version_date,
             }
             for chunk in chunks
         ]
@@ -85,8 +110,8 @@ class ChromaStore:
                         }
                     )
                 return rows
-            except Exception:
-                pass
+            except Exception as exc:
+                LOGGER.warning("Chroma query failed; using JSON vector fallback: %s", exc)
 
         if not self.fallback_path.exists():
             return []

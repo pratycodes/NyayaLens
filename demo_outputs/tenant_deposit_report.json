@@ -1,0 +1,525 @@
+{
+  "analysis_id": "demo-tenancy-sample",
+  "disclaimer": "NyayaLens provides legal information for education and issue spotting only. It is not legal advice and does not create a lawyer-client relationship.",
+  "demo_corpus_notice": "The local corpus may contain simplified demo sources. Replace them with official legal sources before real-world use.",
+  "issue_detected": {
+    "domain": "tenancy",
+    "issue_type": "deposit_deduction",
+    "confidence": "medium",
+    "reasons": [
+      "Matched keywords: deducted deposit"
+    ],
+    "unsafe_request": false,
+    "refusal_message": null,
+    "safety_result": {
+      "is_unsafe_intent": false,
+      "matched_terms": [],
+      "matched_patterns": [],
+      "scope": "user_intent_only",
+      "reason": "No unsafe user intent detected in active user text."
+    }
+  },
+  "extracted_facts": {
+    "document_type": "tenancy_document",
+    "extracted_clauses": [
+      {
+        "name": "rent_amount",
+        "value": "Rs. 30,000",
+        "raw_text": "Monthly rent is Rs. 30,000 payable by the fifth day of each month",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Rent amount anchors deposit and increase disputes.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "repairs_maintenance",
+        "value": "repair charges from the security deposit only with itemized bills and photos",
+        "raw_text": "repair charges from the security deposit only with itemized bills and photos",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Repair responsibility often turns on evidence and agreement wording.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "painting_cleaning_charges",
+        "value": "Painting or cleaning charges must be supported by the rent agreement and actual bills",
+        "raw_text": "Painting or cleaning charges must be supported by the rent agreement and actual bills",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Standard deductions should be supported by agreement or bills.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "eviction_clause",
+        "value": "Eviction or demand to vacate must be communicated in writing",
+        "raw_text": "Eviction or demand to vacate must be communicated in writing",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Eviction generally needs written process.",
+        "additional_occurrences": []
+      }
+    ],
+    "parties": [
+      "Demo Landlord as Landlord",
+      "Demo Tenant as Tenant"
+    ],
+    "structured_facts": {},
+    "inferred_context": {},
+    "dates": [],
+    "amounts": [
+      "Rs. 30,000"
+    ],
+    "detected_domain": "tenancy",
+    "missing_fields": [
+      "state/city or jurisdiction",
+      "document date"
+    ],
+    "parser_warnings": []
+  },
+  "missing_facts": [
+    "document date",
+    "itemized bills",
+    "move-in/move-out condition",
+    "rent payment proof"
+  ],
+  "expert_route": {
+    "primary_expert": "TenancyExpert",
+    "secondary_experts": [
+      "ContractClauseExpert",
+      "LegalAidSafetyExpert",
+      "VerifierExpert"
+    ],
+    "confidence": "medium",
+    "route_reason": "Tenancy issue detected: deposit_deduction."
+  },
+  "jurisdiction": {
+    "state": "Karnataka",
+    "city": "Bengaluru",
+    "jurisdiction_clause": null,
+    "confidence": "high",
+    "warnings": []
+  },
+  "retrieved_sources": [
+    {
+      "citation": {
+        "source_file": "tenancy/tenancy_general_information.txt",
+        "title": "Tenancy General Information",
+        "domain": "tenancy",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-1",
+        "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nTenancy General Information\n\nTenants and landlords should preserve the rent agreement, rent receipts, deposit proof, move-in and move-out photos, inventory lists, repair bills, messages, and written notices.\n\nSecurity deposit deductions should be explained with an itemized basis such as unpaid rent, documented damage, agreed painting charges, or repair invoices. Where the agreement is unclear or no itemized bill is provided, the dispute needs careful evidence review.\n\nEvict...",
+        "corpus_mode": "demo"
+      },
+      "score": 2.1103679750573336
+    },
+    {
+      "citation": {
+        "source_file": "tenancy/legal_aid_general_information.txt",
+        "title": "Legal Aid and Safety General Information",
+        "domain": "tenancy",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-tenancy-legal_aid_general_information-legal_aid_general_information-p1-1",
+        "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nLegal Aid and Safety General Information\n\nFor high-risk employment or tenancy disputes, consider speaking with a qualified lawyer, legal aid clinic, district legal services authority, labour department helpdesk, or appropriate local rent/civil authority depending on the state and facts.\n\nDo not forge evidence, impersonate officials or lawyers, threaten the other party, blackmail, break locks, or publish private information. Use written, polite, factual communication and kee...",
+        "corpus_mode": "demo"
+      },
+      "score": 0.6019508447234967
+    },
+    {
+      "citation": {
+        "source_file": "tenancy/tenancy_general_information.txt",
+        "title": "Tenancy General Information",
+        "domain": "tenancy",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-2",
+        "excerpt": "Rent increase, lock-in period, repairs, and maintenance disputes depend on the agreement, local law, notices, and evidence of condition or payment.",
+        "corpus_mode": "demo"
+      },
+      "score": 0.26156653528722845
+    }
+  ],
+  "rule_checks": [
+    {
+      "id": "tenancy_eviction_written_notice",
+      "passed": false,
+      "title": "Eviction or vacation issue needs written process",
+      "severity": "medium",
+      "confidence": "medium",
+      "evidence": [
+        "Eviction or demand to vacate must be communicated in writing"
+      ],
+      "explanation": "General information from deterministic checks: Eviction/vacation disputes are sensitive and should be handled through written communication and applicable local process.",
+      "suggested_next_step": "Ask for written notice and avoid confrontation, lock-breaking, or self-help steps."
+    },
+    {
+      "id": "tenancy_repair_evidence",
+      "passed": false,
+      "title": "Repair or maintenance evidence needed",
+      "severity": "medium",
+      "confidence": "medium",
+      "evidence": [
+        "repair charges from the security deposit only with itemized bills and photos",
+        "Painting or cleaning charges must be supported by the rent agreement and actual bills"
+      ],
+      "explanation": "General information from deterministic checks: Repair responsibility often turns on proof of condition, cause, bills, and agreement wording.",
+      "suggested_next_step": "Collect photos, move-in report, receipts, messages, and repair estimates."
+    }
+  ],
+  "risk_flags": [
+    {
+      "id": "tenancy_eviction_written_notice",
+      "title": "Eviction or vacation issue needs written process",
+      "severity": "medium",
+      "confidence": "medium",
+      "triggering_evidence": [
+        "Eviction or demand to vacate must be communicated in writing"
+      ],
+      "explanation": "General information from deterministic checks: Eviction/vacation disputes are sensitive and should be handled through written communication and applicable local process.",
+      "suggested_next_step": "Ask for written notice and avoid confrontation, lock-breaking, or self-help steps.",
+      "source_citations": [
+        {
+          "source_file": "tenancy/tenancy_general_information.txt",
+          "title": "Tenancy General Information",
+          "domain": "tenancy",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nTenancy General Information\n\nTenants and landlords should preserve the rent agreement, rent receipts, deposit proof, move-in and move-out photos, inventory lists, repair bills, messages, and written notices.\n\nSecurity deposit deductions should be explained with an itemized basis such as unpaid rent, documented damage, agreed painting charges, or repair invoices. Where the agreement is unclear or no itemized bill is provided, the dispute needs careful evidence review.\n\nEvict...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "tenancy/legal_aid_general_information.txt",
+          "title": "Legal Aid and Safety General Information",
+          "domain": "tenancy",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-tenancy-legal_aid_general_information-legal_aid_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nLegal Aid and Safety General Information\n\nFor high-risk employment or tenancy disputes, consider speaking with a qualified lawyer, legal aid clinic, district legal services authority, labour department helpdesk, or appropriate local rent/civil authority depending on the state and facts.\n\nDo not forge evidence, impersonate officials or lawyers, threaten the other party, blackmail, break locks, or publish private information. Use written, polite, factual communication and kee...",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "Eviction or demand to vacate must be communicated in writing"
+      ]
+    },
+    {
+      "id": "tenancy_repair_evidence",
+      "title": "Repair or maintenance evidence needed",
+      "severity": "medium",
+      "confidence": "medium",
+      "triggering_evidence": [
+        "repair charges from the security deposit only with itemized bills and photos",
+        "Painting or cleaning charges must be supported by the rent agreement and actual bills"
+      ],
+      "explanation": "General information from deterministic checks: Repair responsibility often turns on proof of condition, cause, bills, and agreement wording.",
+      "suggested_next_step": "Collect photos, move-in report, receipts, messages, and repair estimates.",
+      "source_citations": [
+        {
+          "source_file": "tenancy/tenancy_general_information.txt",
+          "title": "Tenancy General Information",
+          "domain": "tenancy",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nTenancy General Information\n\nTenants and landlords should preserve the rent agreement, rent receipts, deposit proof, move-in and move-out photos, inventory lists, repair bills, messages, and written notices.\n\nSecurity deposit deductions should be explained with an itemized basis such as unpaid rent, documented damage, agreed painting charges, or repair invoices. Where the agreement is unclear or no itemized bill is provided, the dispute needs careful evidence review.\n\nEvict...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "tenancy/legal_aid_general_information.txt",
+          "title": "Legal Aid and Safety General Information",
+          "domain": "tenancy",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-tenancy-legal_aid_general_information-legal_aid_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nLegal Aid and Safety General Information\n\nFor high-risk employment or tenancy disputes, consider speaking with a qualified lawyer, legal aid clinic, district legal services authority, labour department helpdesk, or appropriate local rent/civil authority depending on the state and facts.\n\nDo not forge evidence, impersonate officials or lawyers, threaten the other party, blackmail, break locks, or publish private information. Use written, polite, factual communication and kee...",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "repair charges from the security deposit only with itemized bills and photos",
+        "Painting or cleaning charges must be supported by the rent agreement and actual bills"
+      ]
+    }
+  ],
+  "potential_provision_matches": [
+    {
+      "match_id": "tenancy_deposit-karnataka_rent_act_1999-full_act",
+      "legal_area": "tenancy_deposit",
+      "act_name": "Karnataka Rent Act, 1999",
+      "section_number": "full_act",
+      "section_title": "Karnataka Rent Act, 1999",
+      "source_quote": "                                602\n\n             KARNATAKA ACT NO 34 OF 2001\n\n       THE KARNATAKA RENT ACT, 1999\n\n                     Arrangement of Sections\nSections :\n                          CHAPTER - I\n                         PRELIMINARY\n  1.   Short title, extent and commencement\n  2.   Application of the Act\n  3.   Definitions\n                          CHAPTER - II\n                     REGULATION OF RENT\n  4.   Tenancy agreement to be in writing\n  5.   Inheritability of tenancy\n  6.   Rent payable\n  7.   Standard rent\n  8.   Other charges payable\n  9.   Revision of rent in certain c",
+      "why_relevant": "Potentially relevant to security deposit and itemized deduction review.",
+      "matched_facts": [
+        "repair charges from the security deposit only with itemized bills and photos",
+        "Painting or cleaning charges must be supported by the rent agreement and actual bills",
+        "user text: Landlord deducted deposit without itemized bill."
+      ],
+      "missing_facts": [
+        "itemized deductions",
+        "deposit proof",
+        "move-in/move-out condition",
+        "repair bills/photos"
+      ],
+      "confidence": "medium",
+      "implication_level": "possible_civil_breach",
+      "human_review_needed": false,
+      "citations": [
+        {
+          "source_file": "data/raw/official/tenancy/34 of 2001 (E).pdf",
+          "title": "Karnataka Rent Act, 1999 - Karnataka Rent Act, 1999",
+          "domain": "tenancy_deposit",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "                                602\n\n             KARNATAKA ACT NO 34 OF 2001\n\n       THE KARNATAKA RENT ACT, 1999\n\n                     Arrangement of Sections\nSections :\n                          CHAPTER - I\n                         PRELIMINARY\n  1.   Short title, extent and commencement\n  2.   Application of the Act\n  3.   Definitions\n                          CHAPTER - II\n                     REGULATION OF RENT\n  4.   Tenancy agreement to be in writing\n  5.   Inheritability of tenancy\n  6.   Rent payable\n  7.   Standard rent\n  8.   Other charges payable\n  9.   Revision of rent in certain c",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "2001-12-31",
+      "effective_to": null,
+      "version_date": "official_local_file",
+      "source_authority": "Karnataka government / India Code",
+      "source_url": null
+    },
+    {
+      "match_id": "tenancy_deposit-karnataka_rent_act_1999-2",
+      "legal_area": "tenancy_deposit",
+      "act_name": "Karnataka Rent Act, 1999",
+      "section_number": "2",
+      "section_title": "Application of the Act.- (1) Chapters-I to III and",
+      "source_quote": "2. Application of the Act.- (1) Chapters-I to III and\nChapter-V to VIII of this Act shall apply to areas specified in\nthe First Schedule.\n  (2) Chapters I, and IV shall apply only to areas specified\nin the Second Schedule.",
+      "why_relevant": "Potentially relevant to security deposit and itemized deduction review.",
+      "matched_facts": [
+        "repair charges from the security deposit only with itemized bills and photos",
+        "Painting or cleaning charges must be supported by the rent agreement and actual bills",
+        "user text: Landlord deducted deposit without itemized bill."
+      ],
+      "missing_facts": [
+        "itemized deductions",
+        "deposit proof",
+        "move-in/move-out condition",
+        "repair bills/photos"
+      ],
+      "confidence": "medium",
+      "implication_level": "possible_civil_breach",
+      "human_review_needed": false,
+      "citations": [
+        {
+          "source_file": "data/raw/official/tenancy/34 of 2001 (E).pdf",
+          "title": "Karnataka Rent Act, 1999 - Application of the Act.- (1) Chapters-I to III and",
+          "domain": "tenancy_deposit",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "2. Application of the Act.- (1) Chapters-I to III and\nChapter-V to VIII of this Act shall apply to areas specified in\nthe First Schedule.\n  (2) Chapters I, and IV shall apply only to areas specified\nin the Second Schedule.",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "2001-12-31",
+      "effective_to": null,
+      "version_date": "official_local_file",
+      "source_authority": "Karnataka government / India Code",
+      "source_url": null
+    }
+  ],
+  "uncertainties": [
+    "Only demo corpus material may have been retrieved; it is not a complete statement of Indian law."
+  ],
+  "remedy_plan": {
+    "steps": [
+      "Preserve the rent agreement, receipts, messages, notices, and property-condition evidence.",
+      "Ask the landlord for itemized deposit deductions with bills and photos.",
+      "Communicate in writing and keep the tone factual.",
+      "Avoid self-help eviction, lock-breaking, threats, or confrontation.",
+      "Consider the appropriate rent/civil authority route depending on state and facts."
+    ],
+    "evidence_checklist": [
+      "Rent agreement and renewal addenda",
+      "Deposit payment proof and rent receipts",
+      "Move-in and move-out photos/videos",
+      "Repair bills, inspection notes, and itemized deductions",
+      "Messages, emails, and written notices",
+      "Police verification or society communications if relevant"
+    ],
+    "draft_message": "Hello,\n\nPlease share an itemized written statement for the proposed security deposit deductions, including photos, bills/receipts, and the agreement clause relied on. I would also appreciate confirmation of the refundable balance and expected payment date.\n\nRegards,\n[Your Name]",
+    "escalation_note": "Tenancy procedures vary by state; confirm the local route before filing."
+  },
+  "citations": [
+    {
+      "source_file": "tenancy/tenancy_general_information.txt",
+      "title": "Tenancy General Information",
+      "domain": "tenancy",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-1",
+      "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nTenancy General Information\n\nTenants and landlords should preserve the rent agreement, rent receipts, deposit proof, move-in and move-out photos, inventory lists, repair bills, messages, and written notices.\n\nSecurity deposit deductions should be explained with an itemized basis such as unpaid rent, documented damage, agreed painting charges, or repair invoices. Where the agreement is unclear or no itemized bill is provided, the dispute needs careful evidence review.\n\nEvict...",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "tenancy/legal_aid_general_information.txt",
+      "title": "Legal Aid and Safety General Information",
+      "domain": "tenancy",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-tenancy-legal_aid_general_information-legal_aid_general_information-p1-1",
+      "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nLegal Aid and Safety General Information\n\nFor high-risk employment or tenancy disputes, consider speaking with a qualified lawyer, legal aid clinic, district legal services authority, labour department helpdesk, or appropriate local rent/civil authority depending on the state and facts.\n\nDo not forge evidence, impersonate officials or lawyers, threaten the other party, blackmail, break locks, or publish private information. Use written, polite, factual communication and kee...",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "tenancy/tenancy_general_information.txt",
+      "title": "Tenancy General Information",
+      "domain": "tenancy",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-2",
+      "excerpt": "Rent increase, lock-in period, repairs, and maintenance disputes depend on the agreement, local law, notices, and evidence of condition or payment.",
+      "corpus_mode": "demo"
+    }
+  ],
+  "confidence": "medium",
+  "verifier": {
+    "passed": true,
+    "warnings": [],
+    "conservative_message": null
+  },
+  "audit_trace": [
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "parse_document",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "demo_rent_agreement.txt, 781 chars",
+      "output_summary": "Document text available for extraction.",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "extract_clauses",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "781 chars",
+      "output_summary": "4 clauses, domain=tenancy",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "spot_issue",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "user_intent + selected dispute type",
+      "output_summary": "tenancy:deposit_deduction (medium)",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "route_jurisdiction",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "context + document text",
+      "output_summary": "state=Karnataka, city=Bengaluru, confidence=high",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "route_expert",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "deposit_deduction",
+      "output_summary": "primary=TenancyExpert, secondary=ContractClauseExpert, LegalAidSafetyExpert, VerifierExpert",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "match_legal_provisions",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "deposit_deduction + law packs",
+      "output_summary": "2 potentially relevant provisions",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "retrieve_sources",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "query domain=tenancy",
+      "output_summary": "3 sources retrieved",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "apply_rules",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "deposit_deduction",
+      "output_summary": "2 rules, 2 risk flags",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "build_explanation",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "rules + retrieval + clauses",
+      "output_summary": "Report sections prepared before verification.",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "plan_remedy",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "deposit_deduction",
+      "output_summary": "5 steps, 6 evidence items",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "verify_answer",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "3 citations",
+      "output_summary": "passed",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-tenancy-sample",
+      "node_name": "safety_finalize",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "verified parts",
+      "output_summary": "final confidence=medium",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    }
+  ],
+  "safe_followup_enabled": true
+}

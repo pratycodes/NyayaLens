@@ -18,17 +18,35 @@ class Settings(BaseModel):
     allow_remote_llm: bool = False
     embedding_backend: str = "hash"
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    max_upload_mb: int = 10
+    cors_origins: list[str] = [
+        "http://localhost:8501",
+        "http://127.0.0.1:8501",
+        "http://localhost:8502",
+        "http://127.0.0.1:8502",
+    ]
     chroma_persist_dir: Path = ROOT_DIR / "data" / "vectorstore" / "chroma"
     sqlite_path: Path = ROOT_DIR / "data" / "sqlite" / "nyayalens.db"
     raw_laws_dir: Path = ROOT_DIR / "data" / "raw" / "laws"
     processed_dir: Path = ROOT_DIR / "data" / "processed"
     sample_uploads_dir: Path = ROOT_DIR / "data" / "raw" / "sample_uploads"
 
+    @property
+    def max_upload_bytes(self) -> int:
+        return self.max_upload_mb * 1024 * 1024
+
 
 def _bool(value: str | None, default: bool = False) -> bool:
     if value is None:
         return default
     return value.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def _csv(value: str | None, default: list[str]) -> list[str]:
+    if value is None:
+        return default
+    items = [item.strip() for item in value.split(",") if item.strip()]
+    return items or default
 
 
 @lru_cache(maxsize=1)
@@ -41,6 +59,16 @@ def get_settings() -> Settings:
         llm_provider=os.getenv("LLM_PROVIDER", "mock"),
         allow_remote_llm=_bool(os.getenv("ALLOW_REMOTE_LLM"), False),
         embedding_backend=os.getenv("EMBEDDING_BACKEND", "hash"),
+        max_upload_mb=int(os.getenv("MAX_UPLOAD_MB", "10")),
+        cors_origins=_csv(
+            os.getenv("CORS_ORIGINS"),
+            [
+                "http://localhost:8501",
+                "http://127.0.0.1:8501",
+                "http://localhost:8502",
+                "http://127.0.0.1:8502",
+            ],
+        ),
         embedding_model=os.getenv(
             "EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
         ),

@@ -7,7 +7,7 @@ from backend.app.core.schemas import RiskFlag, RuleResult
 def render_risks(risks: list[RiskFlag], rules: list[RuleResult]) -> None:
     st.subheader("Risk Flags")
     if not risks:
-        st.info("No blocking risk flags were produced by the deterministic rules.")
+        st.info("No potential issues were produced by the deterministic rules.")
     for risk in risks:
         with st.container(border=True):
             st.markdown(f"**{risk.title}**")

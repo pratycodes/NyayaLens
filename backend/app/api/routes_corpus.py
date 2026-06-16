@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 
 from backend.app.config import get_settings
 from backend.app.core.schemas import CorpusStatus
@@ -11,9 +11,11 @@ router = APIRouter(prefix="/corpus", tags=["corpus"])
 
 
 @router.post("/ingest")
-def ingest() -> dict[str, int | str]:
-    chunks = ingest_corpus(include_demo=True)
-    return {"status": "ok", "chunks": len(chunks)}
+def ingest(
+    corpus_mode: str = Query("demo", pattern="^(demo|official|mixed)$"),
+) -> dict[str, int | str]:
+    chunks = ingest_corpus(include_demo=corpus_mode in {"demo", "mixed"}, corpus_mode=corpus_mode)
+    return {"status": "ok", "chunks": len(chunks), "corpus_mode": corpus_mode}
 
 
 @router.get("/status", response_model=CorpusStatus)

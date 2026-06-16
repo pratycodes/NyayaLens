@@ -75,17 +75,3 @@ CITY_TO_STATE = {
     "kolkata": "West Bengal",
     "noida": "Uttar Pradesh",
 }
-
-UNSAFE_PATTERNS = [
-    "forge",
-    "fake document",
-    "fake notice",
-    "blackmail",
-    "threaten",
-    "harass",
-    "impersonate",
-    "break lock",
-    "illegal eviction",
-    "bypass notice illegally",
-    "destroy evidence",
-]

@@ -5,7 +5,7 @@ import uuid
 from backend.app.agents.expert_router import route_expert
 from backend.app.agents.issue_spotter import spot_issue
 from backend.app.agents.jurisdiction_router import route_jurisdiction
-from backend.app.agents.remedy_planner import plan_remedy
+from backend.app.agents.remedy_router import route_remedy
 from backend.app.agents.state import AnalysisState
 from backend.app.agents.verifier_agent import verify_report_parts
 from backend.app.core.constants import LEGAL_DISCLAIMER
@@ -15,16 +15,26 @@ from backend.app.core.schemas import (
     UserContext,
 )
 from backend.app.documents.clause_extractor import extract_document_analysis
+from backend.app.documents.relevance import payment_document_relevance_warning
 from backend.app.explainability.audit_trace import trace
 from backend.app.explainability.citations import collect_citations
 from backend.app.explainability.explanation_builder import build_final_report
+from backend.app.legal_matcher.matcher import match_potential_provisions
 from backend.app.retrieval.hybrid_retriever import HybridRetriever
 from backend.app.rules.engine import apply_rules
 from backend.app.storage.sqlite import save_analysis
 
 
 def _audit(state: AnalysisState, node: str, input_summary: str, output_summary: str, warnings: list[str] | None = None) -> None:
-    state.setdefault("audit_trace", []).append(trace(node, input_summary, output_summary, warnings))
+    state.setdefault("audit_trace", []).append(
+        trace(
+            node,
+            input_summary,
+            output_summary,
+            warnings,
+            analysis_id=state.get("analysis_id"),
+        )
+    )
 
 
 def parse_document_node(state: AnalysisState) -> AnalysisState:
@@ -59,18 +69,43 @@ def extract_clauses_node(state: AnalysisState) -> AnalysisState:
 
 
 def spot_issue_node(state: AnalysisState) -> AnalysisState:
+    context = state.get("user_context", UserContext())
+    metadata = state.get("upload_metadata", UploadMetadata())
+    active_intent_text = context.query or (
+        state.get("document_text", "") if metadata.filename == "plain_text.txt" else ""
+    )
     issue = spot_issue(
         state.get("document_text", ""),
         state["document_analysis"],
-        state.get("user_context", UserContext()),
+        context,
+        active_intent_text=active_intent_text,
     )
     state["issue_analysis"] = issue
+    relevance_warning = payment_document_relevance_warning(
+        state.get("document_text", ""),
+        issue.issue_type,
+    )
+    consistency_warnings = [
+        reason
+        for reason in issue.reasons
+        if reason.startswith("Tenancy issue was not selected because")
+    ]
+    if relevance_warning:
+        warnings = state["document_analysis"].parser_warnings
+        if relevance_warning not in warnings:
+            warnings.append(relevance_warning)
+    for warning in consistency_warnings:
+        warnings = state["document_analysis"].parser_warnings
+        if warning not in warnings:
+            warnings.append(warning)
     _audit(
         state,
         "spot_issue",
-        state["document_analysis"].detected_domain,
+        "user_intent + selected dispute type",
         f"{issue.domain}:{issue.issue_type} ({issue.confidence})",
-        [issue.refusal_message] if issue.refusal_message else [],
+        ([issue.refusal_message] if issue.refusal_message else [])
+        + ([relevance_warning] if relevance_warning else [])
+        + consistency_warnings,
     )
     return state
 
@@ -93,13 +128,37 @@ def route_jurisdiction_node(state: AnalysisState) -> AnalysisState:
 
 
 def route_expert_node(state: AnalysisState) -> AnalysisState:
-    route = route_expert(state["issue_analysis"])
+    route = route_expert(
+        state["issue_analysis"],
+        state.get("user_context", UserContext()),
+        state.get("document_analysis"),
+    )
     state["expert_route"] = route
     _audit(
         state,
         "route_expert",
         state["issue_analysis"].issue_type,
         f"primary={route.primary_expert}, secondary={', '.join(route.secondary_experts)}",
+    )
+    return state
+
+
+def match_legal_provisions_node(state: AnalysisState) -> AnalysisState:
+    context = state.get("user_context", UserContext())
+    matches = match_potential_provisions(
+        issue=state["issue_analysis"],
+        document=state["document_analysis"],
+        context=context,
+        jurisdiction=state["jurisdiction"],
+        user_text=context.query or "",
+    )
+    state["potential_provision_matches"] = matches
+    _audit(
+        state,
+        "match_legal_provisions",
+        f"{state['issue_analysis'].issue_type} + law packs",
+        f"{len(matches)} potentially relevant provisions",
+        ["No potentially relevant law-pack provisions matched."] if not matches else [],
     )
     return state
 
@@ -115,7 +174,10 @@ def retrieve_sources_node(state: AnalysisState) -> AnalysisState:
             " ".join(clause.raw_text for clause in state["document_analysis"].extracted_clauses[:8]),
         ]
     )
-    sources = HybridRetriever().retrieve(query, domain=issue.domain, k=5)
+    retrieval_domain = None if issue.domain == "safety" else issue.domain
+    if issue.domain == "contract_payment":
+        retrieval_domain = "employment"
+    sources = HybridRetriever().retrieve(query, domain=retrieval_domain, k=5)
     state["retrieved_sources"] = sources
     _audit(
         state,
@@ -165,8 +227,12 @@ def verify_answer_node(state: AnalysisState) -> AnalysisState:
         jurisdiction=state["jurisdiction"],
         rules=state["rule_results"],
         risks=state["risk_flags"],
-        remedy=state.get("remedy_plan") or plan_remedy(
-            state["issue_analysis"], state["risk_flags"], state.get("user_context", UserContext())
+        remedy=state.get("remedy_plan") or route_remedy(
+            state["issue_analysis"],
+            state["risk_flags"],
+            state.get("user_context", UserContext()),
+            document=state["document_analysis"],
+            jurisdiction=state["jurisdiction"],
         ),
         citations=citations,
     )
@@ -182,10 +248,12 @@ def verify_answer_node(state: AnalysisState) -> AnalysisState:
 
 
 def plan_remedy_node(state: AnalysisState) -> AnalysisState:
-    remedy = plan_remedy(
+    remedy = route_remedy(
         state["issue_analysis"],
         state.get("risk_flags", []),
         state.get("user_context", UserContext()),
+        document=state.get("document_analysis"),
+        jurisdiction=state.get("jurisdiction"),
     )
     state["remedy_plan"] = remedy
     _audit(
@@ -222,6 +290,7 @@ def safety_finalize_node(state: AnalysisState) -> AnalysisState:
         remedy=state["remedy_plan"],
         verifier=verifier,
         audit_trace=state.get("audit_trace", []),
+        potential_provision_matches=state.get("potential_provision_matches", []),
     )
     state["final_report"] = report
     _audit(
@@ -244,6 +313,7 @@ def safety_finalize_node(state: AnalysisState) -> AnalysisState:
         remedy=state["remedy_plan"],
         verifier=verifier,
         audit_trace=state.get("audit_trace", []),
+        potential_provision_matches=state.get("potential_provision_matches", []),
     )
     return state
 
@@ -254,6 +324,7 @@ NODE_SEQUENCE = [
     spot_issue_node,
     route_jurisdiction_node,
     route_expert_node,
+    match_legal_provisions_node,
     retrieve_sources_node,
     apply_rules_node,
     build_explanation_node,
@@ -276,6 +347,7 @@ def build_langgraph_app():
     graph.add_node("spot_issue", spot_issue_node)
     graph.add_node("route_jurisdiction", route_jurisdiction_node)
     graph.add_node("route_expert", route_expert_node)
+    graph.add_node("match_legal_provisions", match_legal_provisions_node)
     graph.add_node("retrieve_sources", retrieve_sources_node)
     graph.add_node("apply_rules", apply_rules_node)
     graph.add_node("build_explanation", build_explanation_node)
@@ -288,7 +360,8 @@ def build_langgraph_app():
     graph.add_edge("extract_clauses", "spot_issue")
     graph.add_edge("spot_issue", "route_jurisdiction")
     graph.add_edge("route_jurisdiction", "route_expert")
-    graph.add_edge("route_expert", "retrieve_sources")
+    graph.add_edge("route_expert", "match_legal_provisions")
+    graph.add_edge("match_legal_provisions", "retrieve_sources")
     graph.add_edge("retrieve_sources", "apply_rules")
     graph.add_edge("apply_rules", "build_explanation")
     graph.add_edge("build_explanation", "plan_remedy")

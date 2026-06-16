@@ -24,8 +24,13 @@ The demo corpus is for showing ingestion, retrieval, citations, rule checks, and
 Add official public legal materials manually under:
 
 ```text
-data/raw/laws/employment/
-data/raw/laws/tenancy/
+data/raw/official/
+  india_code/
+  labour/
+  tenancy/
+  legal_aid/
+  consumer/
+  grievance/
 ```
 
 Supported formats:
@@ -37,8 +42,10 @@ Supported formats:
 Run:
 
 ```bash
-python scripts/ingest_sample_corpus.py
+python scripts/ingest_corpus.py --corpus-mode official
 ```
+
+Use `--corpus-mode mixed` to combine demo placeholders with manually added official sources.
 
 ## Metadata
 
@@ -51,6 +58,9 @@ Ingestion attaches:
 - title
 - page number when available
 - chunk id
+- corpus mode
+- source authority when inferable from directory
+- optional official-source fields such as state, source URL, effective date, and version date
 
 ## Limitations
 

@@ -22,6 +22,7 @@ def _to_source(chunk: StoredCorpusChunk, score: float) -> RetrievedSource:
             page=chunk.page,
             chunk_id=chunk.chunk_id,
             excerpt=excerpt,
+            corpus_mode=chunk.corpus_mode,
         ),
         score=score,
     )

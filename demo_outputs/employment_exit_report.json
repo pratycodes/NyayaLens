@@ -1,0 +1,812 @@
+{
+  "analysis_id": "demo-employment-sample",
+  "disclaimer": "NyayaLens provides legal information for education and issue spotting only. It is not legal advice and does not create a lawyer-client relationship.",
+  "demo_corpus_notice": "The local corpus may contain simplified demo sources. Replace them with official legal sources before real-world use.",
+  "issue_detected": {
+    "domain": "employment",
+    "issue_type": "bond_recovery",
+    "confidence": "high",
+    "reasons": [
+      "Matched keywords: bond, recovery"
+    ],
+    "unsafe_request": false,
+    "refusal_message": null,
+    "safety_result": {
+      "is_unsafe_intent": false,
+      "matched_terms": [],
+      "matched_patterns": [],
+      "scope": "user_intent_only",
+      "reason": "No unsafe user intent detected in active user text."
+    }
+  },
+  "extracted_facts": {
+    "document_type": "employment_document",
+    "extracted_clauses": [
+      {
+        "name": "notice_period",
+        "value": "90 days",
+        "raw_text": "notice period of 90 days before resignation unless waived in writing",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Long notice periods can affect exit planning.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "bond_amount",
+        "value": "Rs. 2,00,000",
+        "raw_text": "training bond of Rs. 2,00,000 if they resign within 12 months of joining",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Bond recovery needs proof of actual loss/training cost.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "non_compete_duration",
+        "value": "12 months",
+        "raw_text": "not compete with the Employer for 12 months after exit",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Post-employment non-compete clauses need legal review.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "confidentiality_clause",
+        "value": "Confidential information must remain confidential after employment ends",
+        "raw_text": "Confidential information must remain confidential after employment ends",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Confidentiality obligations can survive exit.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "full_and_final_settlement",
+        "value": "Full-and-final settlement may be processed after return of company property and completion of exit formalities",
+        "raw_text": "Full-and-final settlement may be processed after return of company property and completion of exit formalities",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Final settlement wording affects deductions and release.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "salary_withholding",
+        "value": "withhold salary without a written calculation and clause reference",
+        "raw_text": "withhold salary without a written calculation and clause reference",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Salary withholding should have a written basis.",
+        "additional_occurrences": []
+      },
+      {
+        "name": "arbitration_clause",
+        "value": "arbitration in Demo City",
+        "raw_text": "arbitration in Demo City",
+        "page": 1,
+        "confidence": "medium",
+        "risk_hint": "Arbitration can affect the dispute path.",
+        "additional_occurrences": []
+      }
+    ],
+    "parties": [
+      "Acme Demo Services LLP as Employer",
+      "Demo Employee as Employee"
+    ],
+    "structured_facts": {},
+    "inferred_context": {},
+    "dates": [],
+    "amounts": [
+      "Rs. 2,00,000"
+    ],
+    "detected_domain": "employment",
+    "missing_fields": [
+      "state/city or jurisdiction",
+      "document date"
+    ],
+    "parser_warnings": []
+  },
+  "missing_facts": [
+    "HR policy",
+    "document date",
+    "resignation date",
+    "salary/FNF status",
+    "user role/category"
+  ],
+  "expert_route": {
+    "primary_expert": "EmploymentExitExpert",
+    "secondary_experts": [
+      "ContractClauseExpert",
+      "VerifierExpert"
+    ],
+    "confidence": "high",
+    "route_reason": "Employment issue detected: bond_recovery."
+  },
+  "jurisdiction": {
+    "state": "Karnataka",
+    "city": "Bengaluru",
+    "jurisdiction_clause": null,
+    "confidence": "high",
+    "warnings": []
+  },
+  "retrieved_sources": [
+    {
+      "citation": {
+        "source_file": "employment/employment_general_information.txt",
+        "title": "Employment Exit General Information",
+        "domain": "employment",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+        "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+        "corpus_mode": "demo"
+      },
+      "score": 1.500995622390226
+    },
+    {
+      "citation": {
+        "source_file": "employment/employment_general_information.txt",
+        "title": "Employment Exit General Information",
+        "domain": "employment",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+        "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+        "corpus_mode": "demo"
+      },
+      "score": 1.1513908966453044
+    },
+    {
+      "citation": {
+        "source_file": "employment/contract_general_information.txt",
+        "title": "Contract Clause General Information",
+        "domain": "employment",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-employment-contract_general_information-contract_general_information-p1-1",
+        "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nContract Clause General Information\n\nArbitration clauses may affect the forum or process for dispute resolution. Jurisdiction clauses may identify a city or court, but their effect depends on the contract and applicable law.\n\nFor deductions, recovery, or withholding clauses, ask for the written clause, itemized calculation, proof of loss or expense, and the legal basis for deduction. Avoid verbal-only communication and preserve copies of all notices and replies.\n\nThis educa...",
+        "corpus_mode": "demo"
+      },
+      "score": 0.9750594011335719
+    }
+  ],
+  "rule_checks": [
+    {
+      "id": "employment_bond_recovery",
+      "passed": false,
+      "title": "Employment bond or training recovery detected",
+      "severity": "high",
+      "confidence": "high",
+      "evidence": [
+        "training bond of Rs. 2,00,000 if they resign within 12 months of joining"
+      ],
+      "explanation": "General information from deterministic checks: A bond/recovery clause can create a high practical risk. The amount should be checked against the agreement, actual training cost proof, resignation timing, and role facts.",
+      "suggested_next_step": "Ask for the training agreement, itemized cost calculation, and proof of actual expense."
+    },
+    {
+      "id": "employment_non_compete_review",
+      "passed": false,
+      "title": "Post-employment non-compete detected",
+      "severity": "high",
+      "confidence": "high",
+      "evidence": [
+        "not compete with the Employer for 12 months after exit"
+      ],
+      "explanation": "General information from deterministic checks: Post-employment restrictions are high-risk and should not be treated as automatically valid or invalid.",
+      "suggested_next_step": "Get legal review before joining a competitor or responding to a non-compete threat."
+    },
+    {
+      "id": "employment_salary_withholding",
+      "passed": false,
+      "title": "Salary or final settlement withholding issue",
+      "severity": "high",
+      "confidence": "high",
+      "evidence": [
+        "withhold salary without a written calculation and clause reference",
+        "Full-and-final settlement may be processed after return of company property and completion of exit formalities"
+      ],
+      "explanation": "General information from deterministic checks: Withholding wages or settlement requires a clear written basis and calculation.",
+      "suggested_next_step": "Ask HR for a written full-and-final calculation and deduction basis."
+    },
+    {
+      "id": "employment_long_notice_period",
+      "passed": false,
+      "title": "Notice period exceeds 60 days",
+      "severity": "medium",
+      "confidence": "high",
+      "evidence": [
+        "notice period of 90 days before resignation unless waived in writing"
+      ],
+      "explanation": "General information from deterministic checks: A long notice period can affect exit options and should be checked against role, contract, HR policy, and state-specific rules.",
+      "suggested_next_step": "Compare the appointment letter with HR policy and ask whether buyout or waiver is available in writing."
+    },
+    {
+      "id": "employment_arbitration_path",
+      "passed": false,
+      "title": "Arbitration clause may affect dispute path",
+      "severity": "medium",
+      "confidence": "medium",
+      "evidence": [
+        "arbitration in Demo City"
+      ],
+      "explanation": "General information from deterministic checks: Arbitration wording may affect forum and process. This is procedural information, not a prediction.",
+      "suggested_next_step": "Preserve the arbitration clause and ask a lawyer/legal-aid clinic how it affects your next step."
+    },
+    {
+      "id": "employment_hr_policy_missing",
+      "passed": false,
+      "title": "HR policy or exit policy not provided",
+      "severity": "medium",
+      "confidence": "medium",
+      "evidence": [],
+      "explanation": "General information from deterministic checks: Offer letters often do not contain the full exit process or deduction policy.",
+      "suggested_next_step": "Upload the HR policy, exit policy, bond agreement, and any resignation emails."
+    }
+  ],
+  "risk_flags": [
+    {
+      "id": "employment_bond_recovery",
+      "title": "Employment bond or training recovery detected",
+      "severity": "high",
+      "confidence": "high",
+      "triggering_evidence": [
+        "training bond of Rs. 2,00,000 if they resign within 12 months of joining"
+      ],
+      "explanation": "General information from deterministic checks: A bond/recovery clause can create a high practical risk. The amount should be checked against the agreement, actual training cost proof, resignation timing, and role facts.",
+      "suggested_next_step": "Ask for the training agreement, itemized cost calculation, and proof of actual expense.",
+      "source_citations": [
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+          "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "training bond of Rs. 2,00,000 if they resign within 12 months of joining"
+      ]
+    },
+    {
+      "id": "employment_non_compete_review",
+      "title": "Post-employment non-compete detected",
+      "severity": "high",
+      "confidence": "high",
+      "triggering_evidence": [
+        "not compete with the Employer for 12 months after exit"
+      ],
+      "explanation": "General information from deterministic checks: Post-employment restrictions are high-risk and should not be treated as automatically valid or invalid.",
+      "suggested_next_step": "Get legal review before joining a competitor or responding to a non-compete threat.",
+      "source_citations": [
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+          "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "not compete with the Employer for 12 months after exit"
+      ]
+    },
+    {
+      "id": "employment_salary_withholding",
+      "title": "Salary or final settlement withholding issue",
+      "severity": "high",
+      "confidence": "high",
+      "triggering_evidence": [
+        "withhold salary without a written calculation and clause reference",
+        "Full-and-final settlement may be processed after return of company property and completion of exit formalities"
+      ],
+      "explanation": "General information from deterministic checks: Withholding wages or settlement requires a clear written basis and calculation.",
+      "suggested_next_step": "Ask HR for a written full-and-final calculation and deduction basis.",
+      "source_citations": [
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+          "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "withhold salary without a written calculation and clause reference",
+        "Full-and-final settlement may be processed after return of company property and completion of exit formalities"
+      ]
+    },
+    {
+      "id": "employment_long_notice_period",
+      "title": "Notice period exceeds 60 days",
+      "severity": "medium",
+      "confidence": "high",
+      "triggering_evidence": [
+        "notice period of 90 days before resignation unless waived in writing"
+      ],
+      "explanation": "General information from deterministic checks: A long notice period can affect exit options and should be checked against role, contract, HR policy, and state-specific rules.",
+      "suggested_next_step": "Compare the appointment letter with HR policy and ask whether buyout or waiver is available in writing.",
+      "source_citations": [
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+          "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "notice period of 90 days before resignation unless waived in writing"
+      ]
+    },
+    {
+      "id": "employment_arbitration_path",
+      "title": "Arbitration clause may affect dispute path",
+      "severity": "medium",
+      "confidence": "medium",
+      "triggering_evidence": [
+        "arbitration in Demo City"
+      ],
+      "explanation": "General information from deterministic checks: Arbitration wording may affect forum and process. This is procedural information, not a prediction.",
+      "suggested_next_step": "Preserve the arbitration clause and ask a lawyer/legal-aid clinic how it affects your next step.",
+      "source_citations": [
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+          "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "arbitration in Demo City"
+      ]
+    },
+    {
+      "id": "employment_hr_policy_missing",
+      "title": "HR policy or exit policy not provided",
+      "severity": "medium",
+      "confidence": "medium",
+      "triggering_evidence": [],
+      "explanation": "General information from deterministic checks: Offer letters often do not contain the full exit process or deduction policy.",
+      "suggested_next_step": "Upload the HR policy, exit policy, bond agreement, and any resignation emails.",
+      "source_citations": [
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "employment/employment_general_information.txt",
+          "title": "Employment Exit General Information",
+          "domain": "employment",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+          "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": []
+    }
+  ],
+  "potential_provision_matches": [
+    {
+      "match_id": "employment_contract-specific_relief_act_1963-full_act",
+      "legal_area": "employment_contract",
+      "act_name": "Specific Relief Act, 1963",
+      "section_number": "full_act",
+      "section_title": "Specific Relief Act, 1963",
+      "source_quote": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+      "why_relevant": "Potentially relevant to employment contract.",
+      "matched_facts": [],
+      "missing_facts": [
+        "complete facts and supporting documents"
+      ],
+      "confidence": "low",
+      "implication_level": "not_enough_facts",
+      "human_review_needed": true,
+      "citations": [
+        {
+          "source_file": "data/raw/official/contract/A1963-47.pdf",
+          "title": "Specific Relief Act, 1963 - Specific Relief Act, 1963",
+          "domain": "contract_payment",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "1964-03-01",
+      "effective_to": null,
+      "version_date": "official_local_file",
+      "source_authority": "India Code / Legislative Department",
+      "source_url": null
+    },
+    {
+      "match_id": "employment_contract-specific_relief_act_1963-1",
+      "legal_area": "employment_contract",
+      "act_name": "Specific Relief Act, 1963",
+      "section_number": "1",
+      "section_title": "Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
+      "source_quote": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+      "why_relevant": "Potentially relevant to employment contract.",
+      "matched_facts": [],
+      "missing_facts": [
+        "complete facts and supporting documents"
+      ],
+      "confidence": "low",
+      "implication_level": "not_enough_facts",
+      "human_review_needed": true,
+      "citations": [
+        {
+          "source_file": "data/raw/official/contract/A1963-47.pdf",
+          "title": "Specific Relief Act, 1963 - Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
+          "domain": "contract_payment",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "1964-03-01",
+      "effective_to": null,
+      "version_date": "official_local_file",
+      "source_authority": "India Code / Legislative Department",
+      "source_url": null
+    },
+    {
+      "match_id": "contract_payment-specific_relief_act_1963-full_act",
+      "legal_area": "contract_payment",
+      "act_name": "Specific Relief Act, 1963",
+      "section_number": "full_act",
+      "section_title": "Specific Relief Act, 1963",
+      "source_quote": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+      "why_relevant": "Potentially relevant to payment, invoice, deduction, or dispute-process review; this is not a finding that any law was broken.",
+      "matched_facts": [
+        "user text: Company is withholding salary and asking for bond recovery."
+      ],
+      "missing_facts": [
+        "amount unpaid",
+        "invoice copy",
+        "payment due date",
+        "work proof",
+        "written follow-up",
+        "partial payment",
+        "written reason for withholding",
+        "whether deduction is TDS, penalty, adjustment, or withholding"
+      ],
+      "confidence": "medium",
+      "implication_level": "possible_civil_breach",
+      "human_review_needed": true,
+      "citations": [
+        {
+          "source_file": "data/raw/official/contract/A1963-47.pdf",
+          "title": "Specific Relief Act, 1963 - Specific Relief Act, 1963",
+          "domain": "contract_payment",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "1 \n \nTHE SPECIFIC RELIEF ACT, 1963                                                                   \n_______ \nARRANGEMENT OF SECTIONS                                                                     \n________ \nPART I \nPRELIMINARY \nSECTIONS \n1. Short title, extent and commencement. \n2. Definitions. \n3. Savings. \n4. Specific relief to be granted only for enforcing individual civil rights and not for enforcing penal \nlaws. \nPART II \nSPECIFIC RELIEF \nCHAPTER I \nRECOVERING POSSESSION OF PROPERTY \n5. Recovery of specific immovable property. \n6. Suit by person dispossessed of immovable property. ",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "1964-03-01",
+      "effective_to": null,
+      "version_date": "official_local_file",
+      "source_authority": "India Code / Legislative Department",
+      "source_url": null
+    },
+    {
+      "match_id": "contract_payment-specific_relief_act_1963-1",
+      "legal_area": "contract_payment",
+      "act_name": "Specific Relief Act, 1963",
+      "section_number": "1",
+      "section_title": "Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
+      "source_quote": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+      "why_relevant": "Potentially relevant to payment, invoice, deduction, or dispute-process review; this is not a finding that any law was broken.",
+      "matched_facts": [
+        "user text: Company is withholding salary and asking for bond recovery."
+      ],
+      "missing_facts": [
+        "amount unpaid",
+        "invoice copy",
+        "payment due date",
+        "work proof",
+        "written follow-up",
+        "partial payment",
+        "written reason for withholding",
+        "whether deduction is TDS, penalty, adjustment, or withholding"
+      ],
+      "confidence": "medium",
+      "implication_level": "possible_civil_breach",
+      "human_review_needed": true,
+      "citations": [
+        {
+          "source_file": "data/raw/official/contract/A1963-47.pdf",
+          "title": "Specific Relief Act, 1963 - Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018)",
+          "domain": "contract_payment",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "1. Subs. by Act 18 of 2018, s. 5, for section 14 (w.e.f. 1-10-2018). \n\n8 \n \n(f) a reversioner in remainder, where the agreement is such a covenant, and the reversioner is \nentitled to the benefit thereof and will sustain material injury by reason of its breach; \n1[(fa) when a limited liability partnership has entered into a contract and subsequently becomes \namalgamated with another limited liability partnership, the new limited liability partnership which \narises out of the amalgamation.] \n(g) when a company has entered into a contract and subsequently becomes amalgamated with \nanother compan",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "1964-03-01",
+      "effective_to": null,
+      "version_date": "official_local_file",
+      "source_authority": "India Code / Legislative Department",
+      "source_url": null
+    }
+  ],
+  "uncertainties": [
+    "Only demo corpus material may have been retrieved; it is not a complete statement of Indian law."
+  ],
+  "remedy_plan": {
+    "steps": [
+      "Preserve the contract, offer letter, HR policy, payslips, and resignation emails.",
+      "Ask HR for a written calculation and the clause relied on for any recovery or deduction.",
+      "Avoid verbal-only communication; confirm calls in a follow-up email.",
+      "Do not concede liability for a bond or non-compete without reviewing the agreement and evidence.",
+      "Consult a lawyer or legal-aid clinic before signing undertakings or settlement releases.",
+      "If wages are withheld, consider a labour department/legal-aid route depending on state and worker category.",
+      "Review the arbitration or dispute-resolution clause before escalation; ask legal aid or a lawyer how it affects the practical route."
+    ],
+    "evidence_checklist": [
+      "Employment contract or offer letter",
+      "Training/bond agreement and training invoices if any",
+      "HR policy or exit policy",
+      "Payslips, bank credits, and full-and-final calculation",
+      "Resignation email, acceptance, and last working day communication",
+      "Relieving letter or experience letter correspondence"
+    ],
+    "draft_message": "Subject: Request for written clarification on exit settlement\n\nDear HR Team,\n\nI am writing to request a written breakdown of the amounts proposed to be adjusted in my exit settlement, including the clause relied on, itemized calculation, and supporting documents for any recovery or deduction. Please also confirm the status of my relieving/experience letter and any pending exit formalities.\n\nRegards,\n[Your Name]",
+    "escalation_note": "Use legal-aid or labour routes carefully because state and worker-category rules may apply."
+  },
+  "citations": [
+    {
+      "source_file": "employment/employment_general_information.txt",
+      "title": "Employment Exit General Information",
+      "domain": "employment",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-1",
+      "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nEmployment Exit General Information\n\nEmployees should preserve offer letters, employment contracts, HR policies, resignation emails, payslips, attendance records, and written communication about final settlement. A dispute about unpaid wages or final settlement should be documented in writing with a request for calculation details.\n\nEmployment bonds and training cost recovery are contract issues. A fair assessment usually depends on the text of the agreement, proof of actua...",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "employment/employment_general_information.txt",
+      "title": "Employment Exit General Information",
+      "domain": "employment",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+      "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "employment/contract_general_information.txt",
+      "title": "Contract Clause General Information",
+      "domain": "employment",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-employment-contract_general_information-contract_general_information-p1-1",
+      "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nContract Clause General Information\n\nArbitration clauses may affect the forum or process for dispute resolution. Jurisdiction clauses may identify a city or court, but their effect depends on the contract and applicable law.\n\nFor deductions, recovery, or withholding clauses, ask for the written clause, itemized calculation, proof of loss or expense, and the legal basis for deduction. Avoid verbal-only communication and preserve copies of all notices and replies.\n\nThis educa...",
+      "corpus_mode": "demo"
+    }
+  ],
+  "confidence": "high",
+  "verifier": {
+    "passed": true,
+    "warnings": [],
+    "conservative_message": null
+  },
+  "audit_trace": [
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "parse_document",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "demo_employment_exit_agreement.txt, 910 chars",
+      "output_summary": "Document text available for extraction.",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "extract_clauses",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "910 chars",
+      "output_summary": "7 clauses, domain=employment",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "spot_issue",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "user_intent + selected dispute type",
+      "output_summary": "employment:bond_recovery (high)",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "route_jurisdiction",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "context + document text",
+      "output_summary": "state=Karnataka, city=Bengaluru, confidence=high",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "route_expert",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "bond_recovery",
+      "output_summary": "primary=EmploymentExitExpert, secondary=ContractClauseExpert, VerifierExpert",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "match_legal_provisions",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "bond_recovery + law packs",
+      "output_summary": "4 potentially relevant provisions",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "retrieve_sources",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "query domain=employment",
+      "output_summary": "3 sources retrieved",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "apply_rules",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "bond_recovery",
+      "output_summary": "6 rules, 6 risk flags",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "build_explanation",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "rules + retrieval + clauses",
+      "output_summary": "Report sections prepared before verification.",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "plan_remedy",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "bond_recovery",
+      "output_summary": "7 steps, 6 evidence items",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "verify_answer",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "3 citations",
+      "output_summary": "passed",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-employment-sample",
+      "node_name": "safety_finalize",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "verified parts",
+      "output_summary": "final confidence=high",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    }
+  ],
+  "safe_followup_enabled": true
+}

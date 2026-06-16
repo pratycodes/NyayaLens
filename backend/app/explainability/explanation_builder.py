@@ -8,6 +8,7 @@ from backend.app.core.schemas import (
     FinalReport,
     IssueAnalysis,
     JurisdictionResult,
+    PotentialProvisionMatch,
     RemedyPlan,
     RetrievedSource,
     RiskFlag,
@@ -17,6 +18,30 @@ from backend.app.core.schemas import (
 from backend.app.explainability.citations import collect_citations
 from backend.app.rules.risk_scoring import overall_confidence
 
+UNPAID_PAYMENT_ISSUES = {
+    "unpaid_salary",
+    "full_and_final",
+    "unpaid_compensation",
+    "payment_withheld",
+    "invoice_unpaid",
+    "payment_deduction",
+    "contract_payment_review",
+}
+UNPAID_PAYMENT_MISSING_FACTS = [
+    "amount unpaid",
+    "month or work period unpaid",
+    "payment due date",
+    "whether invoice was raised",
+    "copy of invoice/payment request",
+    "contract/offer letter/service agreement",
+    "proof of work delivered",
+    "written follow-up sent or not",
+    "whether any partial payment was made",
+    "written reason for withholding payment",
+    "whether deduction is TDS, adjustment, penalty, or disputed withholding",
+    "whether the dispute is salary, stipend, invoice, consulting fee, freelance fee, or full-and-final settlement",
+]
+
 
 def missing_facts(
     document: DocumentAnalysis,
@@ -24,11 +49,23 @@ def missing_facts(
     issue: IssueAnalysis,
 ) -> list[str]:
     facts = list(document.missing_fields)
+    if issue.domain != "unknown":
+        facts = [fact for fact in facts if fact != "dispute domain"]
+    if jurisdiction.state or jurisdiction.city:
+        facts = [fact for fact in facts if fact != "state/city or jurisdiction"]
     if not jurisdiction.state:
         facts.append("state")
     if not jurisdiction.city:
         facts.append("city")
-    if issue.domain == "employment":
+    if issue.issue_type in UNPAID_PAYMENT_ISSUES:
+        facts.extend(UNPAID_PAYMENT_MISSING_FACTS)
+        if document.document_type == "freelance_service_agreement":
+            facts = [
+                fact
+                for fact in facts
+                if fact != "contract/offer letter/service agreement"
+            ]
+    elif issue.domain == "employment":
         for field in ["user role/category", "resignation date", "salary/FNF status", "HR policy"]:
             if field not in facts:
                 facts.append(field)
@@ -63,6 +100,7 @@ def build_final_report(
     remedy: RemedyPlan,
     verifier: VerifierResult,
     audit_trace: list[AuditTraceEntry],
+    potential_provision_matches: list[PotentialProvisionMatch] | None = None,
 ) -> FinalReport:
     citations = collect_citations(retrieved_sources)
     confidence = overall_confidence(
@@ -80,6 +118,7 @@ def build_final_report(
         retrieved_sources=retrieved_sources,
         rule_checks=rules,
         risk_flags=risks,
+        potential_provision_matches=potential_provision_matches or [],
         uncertainties=uncertainties(document, jurisdiction, retrieved_sources),
         remedy_plan=remedy,
         citations=citations,

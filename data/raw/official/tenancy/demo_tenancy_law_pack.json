@@ -1,0 +1,26 @@
+{
+  "pack_id": "demo_tenancy_law_pack",
+  "title": "Demo Tenancy Law Pack",
+  "corpus_mode": "demo",
+  "version_date": "2026-01-01",
+  "sections": [
+    {
+      "act_name": "DEMO Tenancy Deposit Principles",
+      "act_id": "demo_tenancy_deposit",
+      "section_number": "DEMO-TENANCY-DEPOSIT",
+      "section_title": "Security deposit, itemized deduction, and evidence review",
+      "chapter": "Demo tenancy deposit triage",
+      "text": "DEMO LAW PACK: Simplified educational placeholder. Replace with applicable official state tenancy/rent sources before real-world use. Deposit deduction triage needs rent agreement, deposit proof, itemized bills, photos, move-in/move-out condition, unpaid rent records, and written communications.",
+      "jurisdiction": "India",
+      "state": null,
+      "domain": "tenancy",
+      "issue_tags": ["tenancy_deposit", "deposit_deduction"],
+      "effective_from": "1900-01-01",
+      "effective_to": null,
+      "version_date": "2026-01-01",
+      "source_authority": "Demo placeholder law pack",
+      "source_url": null,
+      "corpus_mode": "demo"
+    }
+  ]
+}

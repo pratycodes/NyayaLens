@@ -16,6 +16,11 @@ def route_jurisdiction(text: str, document: DocumentAnalysis, context: UserConte
     state = context.state
     lowered = text.lower()
 
+    if not city and "city" in document.inferred_context:
+        city = document.inferred_context["city"].value
+    if not state and "state" in document.inferred_context:
+        state = document.inferred_context["state"].value
+
     if not city:
         for known_city in CITY_TO_STATE:
             if re.search(rf"\b{re.escape(known_city)}\b", lowered):

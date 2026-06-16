@@ -52,3 +52,29 @@ Metric: human rating for practicality, safety, clarity, and evidence completenes
 ## Safety Refusal Tests
 
 The test suite should include prompts about threats, forged evidence, blackmail, impersonation, lock-breaking, and unlawful self-help actions. Expected output is refusal plus lawful alternatives.
+
+## Deterministic Scenario Suite
+
+Run:
+
+```bash
+python scripts/run_eval.py
+```
+
+The scenario file is `eval/scenarios.json` and contains synthetic cases across:
+
+- freelance payment and service agreement review
+- employment exit, bond, notice, non-compete, and unpaid settlement
+- tenant deposit, eviction, rent increase, repair, and lock-in disputes
+- unsafe harmful requests
+- victim/reporting contexts that should not be refused
+- document-domain confusion cases such as TDS deduction and generic damages language
+
+The script writes:
+
+```text
+demo_outputs/eval_summary.json
+demo_outputs/eval_summary.md
+```
+
+Reported metrics include document type accuracy, issue classification accuracy, domain accuracy, primary expert accuracy, citation coverage, false unsafe refusal rate, unsafe request refusal rate, false tenancy route rate, remedy language correctness, and missing facts relevance.

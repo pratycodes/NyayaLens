@@ -26,7 +26,13 @@ async def upload_document(request: Request) -> UploadResponse:
         suffix = Path(file.filename or "upload.txt").suffix or ".txt"
         path = settings.processed_dir / "uploads" / f"{upload_id}{suffix.lower()}"
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(await file.read())
+        content = await file.read()
+        if len(content) > settings.max_upload_bytes:
+            raise HTTPException(
+                status_code=413,
+                detail=f"Upload exceeds {settings.max_upload_mb} MB local-demo limit.",
+            )
+        path.write_bytes(content)
         parsed = load_uploaded_document(path)
         save_upload_metadata(
             upload_id=upload_id,
@@ -40,5 +46,7 @@ async def upload_document(request: Request) -> UploadResponse:
             filename=file.filename or path.name,
             parser_warnings=parsed.warnings,
         )
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc

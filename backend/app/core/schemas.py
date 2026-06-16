@@ -18,6 +18,7 @@ class UserContext(BaseModel):
     urgency: str | None = None
     selected_dispute_type: str | None = "auto-detect"
     query: str | None = None
+    allow_remote_llm: bool = False
 
 
 class UploadMetadata(BaseModel):
@@ -34,26 +35,43 @@ class ExtractedClause(BaseModel):
     page: int | None = None
     confidence: Confidence = "medium"
     risk_hint: str | None = None
+    additional_occurrences: list[str] = Field(default_factory=list)
+
+
+class InferredContextValue(BaseModel):
+    value: str
+    source: str
 
 
 class DocumentAnalysis(BaseModel):
     document_type: str
     extracted_clauses: list[ExtractedClause] = Field(default_factory=list)
     parties: list[str] = Field(default_factory=list)
+    structured_facts: dict[str, str] = Field(default_factory=dict)
+    inferred_context: dict[str, InferredContextValue] = Field(default_factory=dict)
     dates: list[str] = Field(default_factory=list)
     amounts: list[str] = Field(default_factory=list)
-    detected_domain: Literal["employment", "tenancy", "unknown"] = "unknown"
+    detected_domain: Literal["employment", "tenancy", "contract_payment", "unknown"] = "unknown"
     missing_fields: list[str] = Field(default_factory=list)
     parser_warnings: list[str] = Field(default_factory=list)
 
 
+class SafetyResult(BaseModel):
+    is_unsafe_intent: bool = False
+    matched_terms: list[str] = Field(default_factory=list)
+    matched_patterns: list[str] = Field(default_factory=list)
+    scope: Literal["user_intent_only"] = "user_intent_only"
+    reason: str = "No unsafe user intent detected."
+
+
 class IssueAnalysis(BaseModel):
-    domain: Literal["employment", "tenancy", "unknown"] = "unknown"
+    domain: Literal["employment", "tenancy", "contract_payment", "safety", "unknown"] = "unknown"
     issue_type: str = "unknown"
     confidence: Confidence = "low"
     reasons: list[str] = Field(default_factory=list)
     unsafe_request: bool = False
     refusal_message: str | None = None
+    safety_result: SafetyResult | None = None
 
 
 class JurisdictionResult(BaseModel):
@@ -79,6 +97,7 @@ class Citation(BaseModel):
     page: int | None = None
     chunk_id: str | None = None
     excerpt: str
+    corpus_mode: str | None = None
 
 
 class RetrievedSource(BaseModel):
@@ -109,6 +128,34 @@ class RiskFlag(BaseModel):
     document_citations: list[str] = Field(default_factory=list)
 
 
+class PotentialProvisionMatch(BaseModel):
+    match_id: str
+    legal_area: str
+    act_name: str
+    section_number: str
+    section_title: str
+    source_quote: str
+    why_relevant: str
+    matched_facts: list[str] = Field(default_factory=list)
+    missing_facts: list[str] = Field(default_factory=list)
+    confidence: Confidence = "medium"
+    implication_level: Literal[
+        "relevant_provision_found",
+        "possible_civil_breach",
+        "possible_statutory_non_compliance",
+        "possible_criminal_allegation",
+        "not_enough_facts",
+    ] = "relevant_provision_found"
+    human_review_needed: bool = False
+    citations: list[Citation] = Field(default_factory=list)
+    corpus_mode: str = "demo"
+    effective_from: str | None = None
+    effective_to: str | None = None
+    version_date: str | None = None
+    source_authority: str | None = None
+    source_url: str | None = None
+
+
 class RemedyPlan(BaseModel):
     steps: list[str] = Field(default_factory=list)
     evidence_checklist: list[str] = Field(default_factory=list)
@@ -123,10 +170,14 @@ class VerifierResult(BaseModel):
 
 
 class AuditTraceEntry(BaseModel):
+    analysis_id: str | None = None
     node_name: str
+    started_at: datetime = Field(default_factory=datetime.utcnow)
+    duration_ms: float = 0.0
     input_summary: str
     output_summary: str
     warnings: list[str] = Field(default_factory=list)
+    error: str | None = None
     timestamp: datetime = Field(default_factory=datetime.utcnow)
 
 
@@ -142,6 +193,7 @@ class FinalReport(BaseModel):
     retrieved_sources: list[RetrievedSource]
     rule_checks: list[RuleResult]
     risk_flags: list[RiskFlag]
+    potential_provision_matches: list[PotentialProvisionMatch] = Field(default_factory=list)
     uncertainties: list[str]
     remedy_plan: RemedyPlan
     citations: list[Citation]

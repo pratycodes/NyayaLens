@@ -1,0 +1,321 @@
+[
+  {
+    "act_id": "indian_contract_act_1872",
+    "expected_title": "Indian Contract Act, 1872",
+    "status": "loaded_official",
+    "chunks_count": 113,
+    "source_files": [
+      "data/raw/official/contract/A187209.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "specific_relief_act_1963",
+    "expected_title": "Specific Relief Act, 1963",
+    "status": "loaded_official",
+    "chunks_count": 44,
+    "source_files": [
+      "data/raw/official/contract/A1963-47.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "arbitration_conciliation_act_1996",
+    "expected_title": "Arbitration and Conciliation Act, 1996",
+    "status": "loaded_official",
+    "chunks_count": 94,
+    "source_files": [
+      "data/raw/official/contract/the_arbitration_and_conciliation_act,_1996_act_no._26_of_1996.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "code_on_wages_2019",
+    "expected_title": "Code on Wages, 2019",
+    "status": "loaded_official",
+    "chunks_count": 69,
+    "source_files": [
+      "data/raw/official/labour/aA2019-29.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "industrial_relations_code_2020",
+    "expected_title": "Industrial Relations Code, 2020",
+    "status": "loaded_official",
+    "chunks_count": 105,
+    "source_files": [
+      "data/raw/official/labour/A2020-35.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "code_on_social_security_2020",
+    "expected_title": "Code on Social Security, 2020",
+    "status": "loaded_official",
+    "chunks_count": 164,
+    "source_files": [
+      "data/raw/official/labour/aA2020-36.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "osh_working_conditions_code_2020",
+    "expected_title": "Occupational Safety, Health and Working Conditions Code, 2020",
+    "status": "loaded_official",
+    "chunks_count": 138,
+    "source_files": [
+      "data/raw/official/labour/650059fbb8f1a9.98699174.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "bns_2023",
+    "expected_title": "Bharatiya Nyaya Sanhita, 2023",
+    "status": "loaded_official",
+    "chunks_count": 345,
+    "source_files": [
+      "data/raw/official/criminal/250883_english_01042024.pdf",
+      "data/raw/official/criminal/demo_criminal_screening_law_pack.json"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official/demo",
+    "historical": false
+  },
+  {
+    "act_id": "bnss_2023",
+    "expected_title": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+    "status": "loaded_official",
+    "chunks_count": 504,
+    "source_files": [
+      "data/raw/official/criminal/250884_2_english_01042024.pdf",
+      "data/raw/official/criminal/demo_criminal_screening_law_pack.json"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official/demo",
+    "historical": false
+  },
+  {
+    "act_id": "bsa_2023",
+    "expected_title": "Bharatiya Sakshya Adhiniyam, 2023",
+    "status": "loaded_official",
+    "chunks_count": 158,
+    "source_files": [
+      "data/raw/official/criminal/250882_english_01042024.pdf",
+      "data/raw/official/criminal/demo_criminal_screening_law_pack.json"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official/demo",
+    "historical": false
+  },
+  {
+    "act_id": "ipc_1860",
+    "expected_title": "Indian Penal Code, 1860",
+    "status": "historical_loaded",
+    "chunks_count": 509,
+    "source_files": [
+      "data/raw/official/criminal/THE-INDIAN-PENAL-CODE-1860.pdf",
+      "data/raw/official/criminal/demo_criminal_screening_law_pack.json"
+    ],
+    "warnings": [
+      "Demo placeholder is available but does not replace an official source."
+    ],
+    "required_for_official_mode": false,
+    "corpus_mode": "official/demo",
+    "historical": true
+  },
+  {
+    "act_id": "crpc_1973",
+    "expected_title": "Code of Criminal Procedure, 1973",
+    "status": "historical_loaded",
+    "chunks_count": 494,
+    "source_files": [
+      "data/raw/official/criminal/the_code_of_criminal_procedure,_1973.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": false,
+    "corpus_mode": "official",
+    "historical": true
+  },
+  {
+    "act_id": "evidence_act_1872",
+    "expected_title": "Indian Evidence Act, 1872",
+    "status": "historical_loaded",
+    "chunks_count": 155,
+    "source_files": [
+      "data/raw/official/criminal/iea_1872.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": false,
+    "corpus_mode": "official",
+    "historical": true
+  },
+  {
+    "act_id": "constitution_of_india",
+    "expected_title": "Constitution of India",
+    "status": "loaded_official",
+    "chunks_count": 399,
+    "source_files": [
+      "data/raw/official/constitution/2023050195.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "maharashtra_rent_control_act_1999",
+    "expected_title": "Maharashtra Rent Control Act, 1999",
+    "status": "loaded_official",
+    "chunks_count": 61,
+    "source_files": [
+      "data/raw/official/tenancy/1699026940.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "karnataka_rent_act_1999",
+    "expected_title": "Karnataka Rent Act, 1999",
+    "status": "loaded_official",
+    "chunks_count": 70,
+    "source_files": [
+      "data/raw/official/tenancy/34 of 2001 (E).pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "delhi_rent_control_act_1958",
+    "expected_title": "Delhi Rent Control Act, 1958",
+    "status": "loaded_official",
+    "chunks_count": 61,
+    "source_files": [
+      "data/raw/official/tenancy/delhi_rent_control_act_1958.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "bihar_buildings_lease_rent_eviction_control_act_1982",
+    "expected_title": "Bihar Buildings (Lease, Rent and Eviction) Control Act, 1982",
+    "status": "missing_official",
+    "chunks_count": 0,
+    "source_files": [],
+    "warnings": [
+      "Official pack missing for required law pack: Bihar Buildings (Lease, Rent and Eviction) Control Act, 1982."
+    ],
+    "required_for_official_mode": true,
+    "corpus_mode": "missing",
+    "historical": false
+  },
+  {
+    "act_id": "bihar_government_premises_rent_recovery_eviction_act_1956",
+    "expected_title": "Bihar Government Premises (Rent Recovery and Eviction) Act, 1956",
+    "status": "loaded_official",
+    "chunks_count": 16,
+    "source_files": [
+      "data/raw/official/tenancy/bihar_government_premises_rent_recovery_eviction_act_1956.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": false,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "punjab_rent_act_1995",
+    "expected_title": "Punjab Rent Act, 1995",
+    "status": "loaded_official",
+    "chunks_count": 17,
+    "source_files": [
+      "data/raw/official/tenancy/punjab_rent_act_1995.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "up_urban_premises_tenancy_act_2021",
+    "expected_title": "Uttar Pradesh Regulation of Urban Premises Tenancy Act, 2021",
+    "status": "loaded_official",
+    "chunks_count": 35,
+    "source_files": [
+      "data/raw/official/tenancy/up_urban_premises_tenancy_act_2021.pdf",
+      "data/raw/official/tenancy/up_urban_premises_tenancy_act_2021_ocr.txt"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "west_bengal_premises_tenancy_act_1997",
+    "expected_title": "West Bengal Premises Tenancy Act, 1997",
+    "status": "loaded_official",
+    "chunks_count": 47,
+    "source_files": [
+      "data/raw/official/tenancy/west_bengal_premises_tenancy_act_1997.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "rajasthan_rent_control_act_2001",
+    "expected_title": "Rajasthan Rent Control Act, 2001",
+    "status": "loaded_official",
+    "chunks_count": 32,
+    "source_files": [
+      "data/raw/official/tenancy/rajasthan_rent_control_act_2001.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  },
+  {
+    "act_id": "legal_services_authorities_act_1987",
+    "expected_title": "Legal Services Authorities Act, 1987",
+    "status": "loaded_official",
+    "chunks_count": 35,
+    "source_files": [
+      "data/raw/official/legal_aid/legal_service_authorities_act,_1987.pdf"
+    ],
+    "warnings": [],
+    "required_for_official_mode": true,
+    "corpus_mode": "official",
+    "historical": false
+  }
+]

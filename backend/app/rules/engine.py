@@ -45,7 +45,7 @@ def apply_rules(
         rules = _label_general_information([rule])
         return rules, rules_to_risks(rules, source_citations=source_citations)
 
-    if issue.domain == "employment":
+    if issue.domain in {"employment", "contract_payment"}:
         rules = evaluate_employment_rules(document, context, jurisdiction, issue.issue_type)
     elif issue.domain == "tenancy":
         rules = evaluate_tenancy_rules(document, context, jurisdiction, issue.issue_type)

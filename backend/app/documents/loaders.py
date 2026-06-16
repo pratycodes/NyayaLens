@@ -18,6 +18,8 @@ def save_upload_file(file: UploadFile) -> tuple[str, Path]:
     upload_dir.mkdir(parents=True, exist_ok=True)
     destination = upload_dir / safe_name
     content = file.file.read()
+    if len(content) > settings.max_upload_bytes:
+        raise ValueError(f"Upload exceeds {settings.max_upload_mb} MB local-demo limit.")
     destination.write_bytes(content)
     return upload_id, destination
 

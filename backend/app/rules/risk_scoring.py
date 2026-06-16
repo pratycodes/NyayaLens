@@ -15,6 +15,22 @@ def overall_confidence(confidences: list[Confidence]) -> Confidence:
     return "high"
 
 
+def _tokens(value: str) -> set[str]:
+    return {token.lower() for token in value.split() if len(token) >= 5}
+
+
+def _relevant_citations(rule: RuleResult, citations: list[Citation]) -> list[Citation]:
+    rule_tokens = _tokens(" ".join([rule.title, rule.explanation, " ".join(rule.evidence)]))
+    if not rule_tokens:
+        return []
+    relevant: list[Citation] = []
+    for citation in citations:
+        source_tokens = _tokens(" ".join([citation.title or "", citation.excerpt]))
+        if len(rule_tokens.intersection(source_tokens)) >= 2:
+            relevant.append(citation)
+    return relevant[:2]
+
+
 def rules_to_risks(
     rules: list[RuleResult],
     *,
@@ -35,7 +51,7 @@ def rules_to_risks(
                 triggering_evidence=rule.evidence,
                 explanation=rule.explanation,
                 suggested_next_step=rule.suggested_next_step or "Collect more facts and get written clarification.",
-                source_citations=source_citations[:2],
+                source_citations=_relevant_citations(rule, source_citations),
                 document_citations=document_citations_by_rule.get(rule.id, rule.evidence[:2]),
             )
         )

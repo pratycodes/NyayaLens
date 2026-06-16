@@ -1,0 +1,44 @@
+{
+  "pack_id": "demo_contract_payment_pack",
+  "title": "Demo Contract Payment Law Pack",
+  "corpus_mode": "demo",
+  "version_date": "2026-01-01",
+  "sections": [
+    {
+      "act_name": "DEMO Contract Payment Principles",
+      "act_id": "demo_contract_payment",
+      "section_number": "DEMO-CONTRACT-PAYMENT",
+      "section_title": "Payment, invoice, and contractual obligation review",
+      "chapter": "Demo contract payment triage",
+      "text": "DEMO LAW PACK: Simplified educational placeholder. Replace with official legal sources before real-world use. For contract-payment triage, compare the agreement, invoice, work proof, due date, deductions, and written follow-ups before assessing possible civil breach or remedy route.",
+      "jurisdiction": "India",
+      "state": null,
+      "domain": "contract_payment",
+      "issue_tags": ["contract_payment", "unpaid_compensation", "invoice_unpaid", "payment_deduction", "freelance_agreement_review"],
+      "effective_from": "1900-01-01",
+      "effective_to": null,
+      "version_date": "2026-01-01",
+      "source_authority": "Demo placeholder law pack",
+      "source_url": null,
+      "corpus_mode": "demo"
+    },
+    {
+      "act_name": "DEMO Contract Dispute Process Principles",
+      "act_id": "demo_contract_process",
+      "section_number": "DEMO-CONTRACT-FORUM",
+      "section_title": "Arbitration and jurisdiction clause review",
+      "chapter": "Demo dispute process triage",
+      "text": "DEMO LAW PACK: Simplified educational placeholder. Replace with official legal sources before real-world use. Arbitration or jurisdiction wording may affect dispute process and should be reviewed by a human legal professional before escalation.",
+      "jurisdiction": "India",
+      "state": null,
+      "domain": "contract_payment",
+      "issue_tags": ["contract_payment", "arbitration", "jurisdiction", "dispute_process"],
+      "effective_from": "1900-01-01",
+      "effective_to": null,
+      "version_date": "2026-01-01",
+      "source_authority": "Demo placeholder law pack",
+      "source_url": null,
+      "corpus_mode": "demo"
+    }
+  ]
+}

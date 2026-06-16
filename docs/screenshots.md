@@ -1,6 +1,8 @@
 # Screenshots
 
-Add screenshots after running the local UI from the repo root:
+Use only synthetic demo documents for public screenshots. Do not capture real uploaded documents or personal/company details.
+
+Run from the repo root:
 
 ```bash
 python scripts/ingest_sample_corpus.py
@@ -15,14 +17,31 @@ http://localhost:8501
 
 ## Capture Checklist
 
-| Screenshot file | What to show | How to produce it |
+| Screenshot file | Tab | What to show |
 | --- | --- | --- |
-| `employment-analysis.png` | Full structured employment report | Select `Sample employment contract`, add `Bengaluru`, `Karnataka`, role `employee`, and query `Company is withholding salary and asking for bond recovery.` |
-| `tenancy-analysis.png` | Full structured tenancy report | Select `Sample rent agreement`, add `Bengaluru`, `Karnataka`, role `tenant`, and query `Landlord deducted deposit without itemized bill.` |
-| `clauses.png` | Extracted clauses section | Scroll to `Extracted Facts` and include clause cards with values and raw text. |
-| `risks-and-rules.png` | Risk flags and rule checks | Scroll to `Risk Flags` and expand `Rule Checks`. |
-| `citations.png` | Retrieved source excerpts and citation list | Scroll to `Retrieved Sources` and expand `Citation List`. |
-| `audit-trace.png` | Explainability trail | Expand `Audit Trace`. |
+| `overview.png` | Overview | Summary cards and concise key facts table for `Demo freelance agreement`. |
+| `risk-table.png` | Risks & Remedies | Filterable risk table and possible counterparty arguments. |
+| `document-review.png` | Document Review | PDF or text evidence viewer with important sections and selected citation. |
+| `sources-citations.png` | Sources & Citations | Uploaded-document citations separated from legal/demo corpus citations. |
+| `draft-checklist.png` | Drafts & Checklist | Safe next steps, evidence checklist, and company/client/accounts draft. |
+| `trust-panel.png` | Evaluation / Trust | Corpus mode, retrieval mode, human review reasons, and citation coverage. |
+| `audit-debug.png` | Audit / Debug | Raw enums, extracted clauses, retrieval scores, rule checks, verifier, and audit trace. |
+
+## Suggested Demo Inputs
+
+Freelance payment:
+
+- Sample: `Demo freelance agreement`
+- Role: `freelancer`
+- State/city: `Maharashtra`, `Mumbai`
+- Query: `I have not been paid for the last invoice.`
+
+Tenant deposit:
+
+- Sample: `Demo rent agreement`
+- Role: `tenant`
+- State/city: `Karnataka`, `Bengaluru`
+- Query: `Landlord deducted deposit without itemized bill.`
 
 ## Placeholder Directory
 
@@ -32,12 +51,4 @@ Store final images in:
 docs/assets/screenshots/
 ```
 
-Suggested final README embed block:
-
-```markdown
-![Employment analysis](docs/assets/screenshots/employment-analysis.png)
-![Tenancy analysis](docs/assets/screenshots/tenancy-analysis.png)
-![Citations](docs/assets/screenshots/citations.png)
-```
-
-Do not use screenshots that show real personal documents. Use the fake sample uploads under `data/raw/sample_uploads/`.
+The directory is tracked by `docs/assets/screenshots/.gitkeep`.

@@ -1,0 +1,491 @@
+{
+  "analysis_id": "demo-unsafe-request",
+  "disclaimer": "NyayaLens provides legal information for education and issue spotting only. It is not legal advice and does not create a lawyer-client relationship.",
+  "demo_corpus_notice": "The local corpus may contain simplified demo sources. Replace them with official legal sources before real-world use.",
+  "issue_detected": {
+    "domain": "safety",
+    "issue_type": "unsafe_request",
+    "confidence": "high",
+    "reasons": [
+      "Unsafe user-intent patterns detected: forge"
+    ],
+    "unsafe_request": true,
+    "refusal_message": "I cannot help with threats, forged evidence, impersonation, harassment, illegal lock-breaking, or other unlawful pressure tactics. A safer path is to preserve evidence, communicate in writing, ask for itemized reasons, and consult legal aid or a qualified lawyer for high-risk steps.",
+    "safety_result": {
+      "is_unsafe_intent": true,
+      "matched_terms": [
+        "forge"
+      ],
+      "matched_patterns": [
+        "forge"
+      ],
+      "scope": "user_intent_only",
+      "reason": "User intent asks for unlawful pressure, fabrication, impersonation, or harassment."
+    }
+  },
+  "extracted_facts": {
+    "document_type": "plain_text_description",
+    "extracted_clauses": [],
+    "parties": [],
+    "structured_facts": {},
+    "inferred_context": {},
+    "dates": [],
+    "amounts": [],
+    "detected_domain": "unknown",
+    "missing_fields": [
+      "dispute domain",
+      "state/city or jurisdiction",
+      "document date"
+    ],
+    "parser_warnings": []
+  },
+  "missing_facts": [
+    "city",
+    "document date",
+    "state",
+    "state/city or jurisdiction"
+  ],
+  "expert_route": {
+    "primary_expert": "LegalAidSafetyExpert",
+    "secondary_experts": [
+      "VerifierExpert"
+    ],
+    "confidence": "high",
+    "route_reason": "Request needs safety handling and legal-aid oriented guidance."
+  },
+  "jurisdiction": {
+    "state": null,
+    "city": null,
+    "jurisdiction_clause": null,
+    "confidence": "low",
+    "warnings": [
+      "State is missing or uncertain; state-specific law may apply."
+    ]
+  },
+  "retrieved_sources": [
+    {
+      "citation": {
+        "source_file": "tenancy/legal_aid_general_information.txt",
+        "title": "Legal Aid and Safety General Information",
+        "domain": "tenancy",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-tenancy-legal_aid_general_information-legal_aid_general_information-p1-1",
+        "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nLegal Aid and Safety General Information\n\nFor high-risk employment or tenancy disputes, consider speaking with a qualified lawyer, legal aid clinic, district legal services authority, labour department helpdesk, or appropriate local rent/civil authority depending on the state and facts.\n\nDo not forge evidence, impersonate officials or lawyers, threaten the other party, blackmail, break locks, or publish private information. Use written, polite, factual communication and kee...",
+        "corpus_mode": "demo"
+      },
+      "score": 0.4273398290234778
+    },
+    {
+      "citation": {
+        "source_file": "tenancy/tenancy_general_information.txt",
+        "title": "Tenancy General Information",
+        "domain": "tenancy",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-2",
+        "excerpt": "Rent increase, lock-in period, repairs, and maintenance disputes depend on the agreement, local law, notices, and evidence of condition or payment.",
+        "corpus_mode": "demo"
+      },
+      "score": 0.2637521893583148
+    },
+    {
+      "citation": {
+        "source_file": "tenancy/tenancy_general_information.txt",
+        "title": "Tenancy General Information",
+        "domain": "tenancy",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-1",
+        "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nTenancy General Information\n\nTenants and landlords should preserve the rent agreement, rent receipts, deposit proof, move-in and move-out photos, inventory lists, repair bills, messages, and written notices.\n\nSecurity deposit deductions should be explained with an itemized basis such as unpaid rent, documented damage, agreed painting charges, or repair invoices. Where the agreement is unclear or no itemized bill is provided, the dispute needs careful evidence review.\n\nEvict...",
+        "corpus_mode": "demo"
+      },
+      "score": 0.21213203435596426
+    },
+    {
+      "citation": {
+        "source_file": "employment/contract_general_information.txt",
+        "title": "Contract Clause General Information",
+        "domain": "employment",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-employment-contract_general_information-contract_general_information-p1-1",
+        "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nContract Clause General Information\n\nArbitration clauses may affect the forum or process for dispute resolution. Jurisdiction clauses may identify a city or court, but their effect depends on the contract and applicable law.\n\nFor deductions, recovery, or withholding clauses, ask for the written clause, itemized calculation, proof of loss or expense, and the legal basis for deduction. Avoid verbal-only communication and preserve copies of all notices and replies.\n\nThis educa...",
+        "corpus_mode": "demo"
+      },
+      "score": 0.1997535427283139
+    },
+    {
+      "citation": {
+        "source_file": "employment/employment_general_information.txt",
+        "title": "Employment Exit General Information",
+        "domain": "employment",
+        "jurisdiction": "India",
+        "page": 1,
+        "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+        "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+        "corpus_mode": "demo"
+      },
+      "score": 0.1405456737852613
+    }
+  ],
+  "rule_checks": [
+    {
+      "id": "unsafe_request_refusal",
+      "passed": false,
+      "title": "Unsafe request refused",
+      "severity": "high",
+      "confidence": "high",
+      "evidence": [
+        "Unsafe user-intent patterns detected: forge"
+      ],
+      "explanation": "General information from deterministic checks: I cannot help with threats, forged evidence, impersonation, harassment, illegal lock-breaking, or other unlawful pressure tactics. A safer path is to preserve evidence, communicate in writing, ask for itemized reasons, and consult legal aid or a qualified lawyer for high-risk steps.",
+      "suggested_next_step": "Use lawful written communication and consult legal aid for high-risk situations."
+    }
+  ],
+  "risk_flags": [
+    {
+      "id": "unsafe_request_refusal",
+      "title": "Unsafe request refused",
+      "severity": "high",
+      "confidence": "high",
+      "triggering_evidence": [
+        "Unsafe user-intent patterns detected: forge"
+      ],
+      "explanation": "General information from deterministic checks: I cannot help with threats, forged evidence, impersonation, harassment, illegal lock-breaking, or other unlawful pressure tactics. A safer path is to preserve evidence, communicate in writing, ask for itemized reasons, and consult legal aid or a qualified lawyer for high-risk steps.",
+      "suggested_next_step": "Use lawful written communication and consult legal aid for high-risk situations.",
+      "source_citations": [
+        {
+          "source_file": "tenancy/legal_aid_general_information.txt",
+          "title": "Legal Aid and Safety General Information",
+          "domain": "tenancy",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-tenancy-legal_aid_general_information-legal_aid_general_information-p1-1",
+          "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nLegal Aid and Safety General Information\n\nFor high-risk employment or tenancy disputes, consider speaking with a qualified lawyer, legal aid clinic, district legal services authority, labour department helpdesk, or appropriate local rent/civil authority depending on the state and facts.\n\nDo not forge evidence, impersonate officials or lawyers, threaten the other party, blackmail, break locks, or publish private information. Use written, polite, factual communication and kee...",
+          "corpus_mode": "demo"
+        },
+        {
+          "source_file": "tenancy/tenancy_general_information.txt",
+          "title": "Tenancy General Information",
+          "domain": "tenancy",
+          "jurisdiction": "India",
+          "page": 1,
+          "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-2",
+          "excerpt": "Rent increase, lock-in period, repairs, and maintenance disputes depend on the agreement, local law, notices, and evidence of condition or payment.",
+          "corpus_mode": "demo"
+        }
+      ],
+      "document_citations": [
+        "Unsafe user-intent patterns detected: forge"
+      ]
+    }
+  ],
+  "potential_provision_matches": [
+    {
+      "match_id": "criminal_screening-bns_2023-full_act",
+      "legal_area": "criminal_screening",
+      "act_name": "Bharatiya Nyaya Sanhita, 2023",
+      "section_number": "full_act",
+      "section_title": "Bharatiya Nyaya Sanhita, 2023",
+      "source_quote": "THE BHARATIYA NYAYA SANHITA, 2023\nNO. 45 OF 2023\n[25th December, 2023.]\nAn Act to consolidate and amend the provisions relating to offences and for\nmatters connected therewithor incidentalthereto.\nBE it enacted by Parliament in the Seventy-fourth Year of the Republic of India as\nfollows:––\nCHAPTERI\nPRELIMINARY\n1. (1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023.\n(2) It shall come intoforce on such date as the Central Government may, bynotification\nin the Official Gazette, appoint, and different dates maybe appointed for different provisions\nof this Sanhita.\nShort title,\ncommencement\n",
+      "why_relevant": "Potentially relevant only because user text contains fraud, forgery, threat, blackmail, or similar allegation facts.",
+      "matched_facts": [
+        "user text contains criminal-screening fact pattern: Help me forge evidence and threaten the landlord."
+      ],
+      "missing_facts": [
+        "forged invoice/document",
+        "fake signature",
+        "threat/intimidation",
+        "blackmail",
+        "deception from beginning",
+        "dishonest inducement",
+        "physical intimidation",
+        "theft/misappropriation",
+        "fraud"
+      ],
+      "confidence": "medium",
+      "implication_level": "possible_criminal_allegation",
+      "human_review_needed": true,
+      "citations": [
+        {
+          "source_file": "data/raw/official/criminal/250883_english_01042024.pdf",
+          "title": "Bharatiya Nyaya Sanhita, 2023 - Bharatiya Nyaya Sanhita, 2023",
+          "domain": "criminal_screening",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "THE BHARATIYA NYAYA SANHITA, 2023\nNO. 45 OF 2023\n[25th December, 2023.]\nAn Act to consolidate and amend the provisions relating to offences and for\nmatters connected therewithor incidentalthereto.\nBE it enacted by Parliament in the Seventy-fourth Year of the Republic of India as\nfollows:––\nCHAPTERI\nPRELIMINARY\n1. (1) ThisAct maybe called the Bharatiya Nyaya Sanhita, 2023.\n(2) It shall come intoforce on such date as the Central Government may, bynotification\nin the Official Gazette, appoint, and different dates maybe appointed for different provisions\nof this Sanhita.\nShort title,\ncommencement\n",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "2024-07-01",
+      "effective_to": null,
+      "version_date": "2024-04-01",
+      "source_authority": "Ministry of Home Affairs",
+      "source_url": "https://www.mha.gov.in/sites/default/files/250883_english_01042024.pdf"
+    },
+    {
+      "match_id": "criminal_screening-bnss_2023-full_act",
+      "legal_area": "criminal_screening",
+      "act_name": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+      "section_number": "full_act",
+      "section_title": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+      "source_quote": "vlk/kkj.k\nEXTRAORDINARY\nHkkx  II — [k.M 1\nPART II — Section 1\nizkf/kdkj ls izdkf'kr\nPUBLISHED  BY  AUTHORITY\nlañ   54]\nubZ fnYyh] lkseokj] fnlEcj 25] 2023@ikS\"k 4] 1945 ¼'kd½\nNo. 54]\nNEW DELHI, MONDAY, DECEMBER 25, 2023/PAUSHA 4, 1945 (SAKA)\nbl Hkkx esa fHkUu i`\"B la[;k nh tkrh gS ftlls fd ;g vyx ladyu ds :i esa j[kk tk ldsA\nSeparate paging is given to this Part in order that it may be filed as a separate compilation.\nxxxGIDHxxx\nxxxGIDExxx\njftLVªh lañ Mhñ ,yñ—(,u)04@0007@2003—23\nREGISTERED NO. DL—(N)04/0007/2003—23\nMINISTRY OF LAW AND JUSTICE\n(Legislative Department)\nNew Delhi, the 25th Decemb",
+      "why_relevant": "Potentially relevant only because user text contains fraud, forgery, threat, blackmail, or similar allegation facts.",
+      "matched_facts": [
+        "user text contains criminal-screening fact pattern: Help me forge evidence and threaten the landlord."
+      ],
+      "missing_facts": [
+        "forged invoice/document",
+        "fake signature",
+        "threat/intimidation",
+        "blackmail",
+        "deception from beginning",
+        "dishonest inducement",
+        "physical intimidation",
+        "theft/misappropriation",
+        "fraud"
+      ],
+      "confidence": "medium",
+      "implication_level": "possible_criminal_allegation",
+      "human_review_needed": true,
+      "citations": [
+        {
+          "source_file": "data/raw/official/criminal/250884_2_english_01042024.pdf",
+          "title": "Bharatiya Nagarik Suraksha Sanhita, 2023 - Bharatiya Nagarik Suraksha Sanhita, 2023",
+          "domain": "criminal_screening",
+          "jurisdiction": "India",
+          "page": null,
+          "chunk_id": null,
+          "excerpt": "vlk/kkj.k\nEXTRAORDINARY\nHkkx  II — [k.M 1\nPART II — Section 1\nizkf/kdkj ls izdkf'kr\nPUBLISHED  BY  AUTHORITY\nlañ   54]\nubZ fnYyh] lkseokj] fnlEcj 25] 2023@ikS\"k 4] 1945 ¼'kd½\nNo. 54]\nNEW DELHI, MONDAY, DECEMBER 25, 2023/PAUSHA 4, 1945 (SAKA)\nbl Hkkx esa fHkUu i`\"B la[;k nh tkrh gS ftlls fd ;g vyx ladyu ds :i esa j[kk tk ldsA\nSeparate paging is given to this Part in order that it may be filed as a separate compilation.\nxxxGIDHxxx\nxxxGIDExxx\njftLVªh lañ Mhñ ,yñ—(,u)04@0007@2003—23\nREGISTERED NO. DL—(N)04/0007/2003—23\nMINISTRY OF LAW AND JUSTICE\n(Legislative Department)\nNew Delhi, the 25th Decemb",
+          "corpus_mode": "official"
+        }
+      ],
+      "corpus_mode": "official",
+      "effective_from": "2024-07-01",
+      "effective_to": null,
+      "version_date": "2024-04-01",
+      "source_authority": "Ministry of Home Affairs",
+      "source_url": "https://www.mha.gov.in/sites/default/files/250884_2_english_01042024.pdf"
+    }
+  ],
+  "uncertainties": [
+    "Only demo corpus material may have been retrieved; it is not a complete statement of Indian law.",
+    "State is missing or uncertain; state-specific law may apply."
+  ],
+  "remedy_plan": {
+    "steps": [
+      "Do not use threats, forged evidence, impersonation, or confrontation.",
+      "Preserve the original documents and communication records.",
+      "Use a short written clarification request and seek legal aid for urgent risks.",
+      "Confirm the state/city and contract jurisdiction before choosing a filing or escalation route."
+    ],
+    "evidence_checklist": [
+      "Original documents",
+      "Messages/emails",
+      "Payment records",
+      "Notices"
+    ],
+    "draft_message": "I want to resolve this through written communication. Please share the facts, documents, and calculation you are relying on so I can respond appropriately.",
+    "escalation_note": "For immediate safety concerns, contact local authorities or qualified legal aid."
+  },
+  "citations": [
+    {
+      "source_file": "tenancy/legal_aid_general_information.txt",
+      "title": "Legal Aid and Safety General Information",
+      "domain": "tenancy",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-tenancy-legal_aid_general_information-legal_aid_general_information-p1-1",
+      "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nLegal Aid and Safety General Information\n\nFor high-risk employment or tenancy disputes, consider speaking with a qualified lawyer, legal aid clinic, district legal services authority, labour department helpdesk, or appropriate local rent/civil authority depending on the state and facts.\n\nDo not forge evidence, impersonate officials or lawyers, threaten the other party, blackmail, break locks, or publish private information. Use written, polite, factual communication and kee...",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "tenancy/tenancy_general_information.txt",
+      "title": "Tenancy General Information",
+      "domain": "tenancy",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-2",
+      "excerpt": "Rent increase, lock-in period, repairs, and maintenance disputes depend on the agreement, local law, notices, and evidence of condition or payment.",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "tenancy/tenancy_general_information.txt",
+      "title": "Tenancy General Information",
+      "domain": "tenancy",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-tenancy-tenancy_general_information-tenancy_general_information-p1-1",
+      "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nTenancy General Information\n\nTenants and landlords should preserve the rent agreement, rent receipts, deposit proof, move-in and move-out photos, inventory lists, repair bills, messages, and written notices.\n\nSecurity deposit deductions should be explained with an itemized basis such as unpaid rent, documented damage, agreed painting charges, or repair invoices. Where the agreement is unclear or no itemized bill is provided, the dispute needs careful evidence review.\n\nEvict...",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "employment/contract_general_information.txt",
+      "title": "Contract Clause General Information",
+      "domain": "employment",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-employment-contract_general_information-contract_general_information-p1-1",
+      "excerpt": "DEMO CORPUS: This is a simplified educational placeholder. Replace with official legal sources before real-world use.\n\nContract Clause General Information\n\nArbitration clauses may affect the forum or process for dispute resolution. Jurisdiction clauses may identify a city or court, but their effect depends on the contract and applicable law.\n\nFor deductions, recovery, or withholding clauses, ask for the written clause, itemized calculation, proof of loss or expense, and the legal basis for deduction. Avoid verbal-only communication and preserve copies of all notices and replies.\n\nThis educa...",
+      "corpus_mode": "demo"
+    },
+    {
+      "source_file": "employment/employment_general_information.txt",
+      "title": "Employment Exit General Information",
+      "domain": "employment",
+      "jurisdiction": "India",
+      "page": 1,
+      "chunk_id": "demo-employment-employment_general_information-employment_general_information-p1-2",
+      "excerpt": "Post-employment non-compete restrictions need careful legal review. Broad restrictions after employment may be difficult to enforce, but confidentiality and non-solicitation obligations can still matter depending on facts and contract wording.\n\nLong notice periods should be checked against the signed contract, appointment letter, role category, company policy, and applicable state-specific employment law. If jurisdiction is unclear, confidence should be reduced.",
+      "corpus_mode": "demo"
+    }
+  ],
+  "confidence": "medium",
+  "verifier": {
+    "passed": true,
+    "warnings": [],
+    "conservative_message": null
+  },
+  "audit_trace": [
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "parse_document",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "unsafe_request.txt, 80 chars",
+      "output_summary": "Document text available for extraction.",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "extract_clauses",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "80 chars",
+      "output_summary": "0 clauses, domain=unknown",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "spot_issue",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "user_intent + selected dispute type",
+      "output_summary": "safety:unsafe_request (high)",
+      "warnings": [
+        "I cannot help with threats, forged evidence, impersonation, harassment, illegal lock-breaking, or other unlawful pressure tactics. A safer path is to preserve evidence, communicate in writing, ask for itemized reasons, and consult legal aid or a qualified lawyer for high-risk steps."
+      ],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "route_jurisdiction",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "context + document text",
+      "output_summary": "state=None, city=None, confidence=low",
+      "warnings": [
+        "State is missing or uncertain; state-specific law may apply."
+      ],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "route_expert",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "unsafe_request",
+      "output_summary": "primary=LegalAidSafetyExpert, secondary=VerifierExpert",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "match_legal_provisions",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "unsafe_request + law packs",
+      "output_summary": "2 potentially relevant provisions",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "retrieve_sources",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "query domain=safety",
+      "output_summary": "5 sources retrieved",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "apply_rules",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "unsafe_request",
+      "output_summary": "1 rules, 1 risk flags",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "build_explanation",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "rules + retrieval + clauses",
+      "output_summary": "Report sections prepared before verification.",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "plan_remedy",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "unsafe_request",
+      "output_summary": "4 steps, 4 evidence items",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "verify_answer",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "5 citations",
+      "output_summary": "passed",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    },
+    {
+      "analysis_id": "demo-unsafe-request",
+      "node_name": "safety_finalize",
+      "started_at": "2026-01-01T00:00:00",
+      "duration_ms": 0.0,
+      "input_summary": "verified parts",
+      "output_summary": "final confidence=medium",
+      "warnings": [],
+      "error": null,
+      "timestamp": "2026-01-01T00:00:00"
+    }
+  ],
+  "safe_followup_enabled": true
+}

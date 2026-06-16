@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import shutil
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -65,16 +67,68 @@ def _parse_pdf_pdfplumber(path: Path) -> ParsedDocument:
     )
 
 
+def _text_quality(text: str) -> float:
+    if not text:
+        return 0.0
+    useful = sum(1 for char in text if char.isprintable() or char in "\n\t")
+    letters = sum(1 for char in text if char.isalpha())
+    return min(useful / max(len(text), 1), letters / max(len(text), 1) * 4)
+
+
+def _parse_pdf_pdftotext(path: Path) -> ParsedDocument:
+    if not shutil.which("pdftotext"):
+        raise UnsupportedDocumentError("pdftotext is unavailable.")
+    result = subprocess.run(
+        ["pdftotext", "-layout", str(path), "-"],
+        check=True,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    pages = result.stdout.split("\f")
+    page_texts = [
+        (index, page_text)
+        for index, page_text in enumerate(pages, start=1)
+        if page_text.strip()
+    ]
+    return ParsedDocument(
+        text="\n".join(page_text for _, page_text in page_texts),
+        page_texts=page_texts or [(1, result.stdout)],
+        warnings=["Used pdftotext fallback because embedded PDF text looked garbled."],
+    )
+
+
 def parse_pdf(path: Path) -> ParsedDocument:
     try:
-        return _parse_pdf_pymupdf(path)
+        parsed = _parse_pdf_pymupdf(path)
+        if _text_quality(parsed.text) >= 0.45:
+            return parsed
+        try:
+            fallback = _parse_pdf_pdftotext(path)
+            if _text_quality(fallback.text) > _text_quality(parsed.text):
+                return fallback
+        except Exception:
+            return parsed
+        return parsed
     except Exception:
         try:
-            return _parse_pdf_pdfplumber(path)
+            parsed = _parse_pdf_pdfplumber(path)
+            if _text_quality(parsed.text) >= 0.45:
+                return parsed
+            try:
+                fallback = _parse_pdf_pdftotext(path)
+                if _text_quality(fallback.text) > _text_quality(parsed.text):
+                    return fallback
+            except Exception:
+                return parsed
+            return parsed
         except Exception as exc:
-            raise UnsupportedDocumentError(
-                "PDF parsing failed with PyMuPDF and pdfplumber. OCR may be required."
-            ) from exc
+            try:
+                return _parse_pdf_pdftotext(path)
+            except Exception:
+                raise UnsupportedDocumentError(
+                    "PDF parsing failed with PyMuPDF, pdfplumber, and pdftotext. OCR may be required."
+                ) from exc
 
 
 def parse_document(path: Path) -> ParsedDocument:

@@ -1,0 +1,44 @@
+{
+  "pack_id": "demo_labour_classification_pack",
+  "title": "Demo Labour Classification Law Pack",
+  "corpus_mode": "demo",
+  "version_date": "2026-01-01",
+  "sections": [
+    {
+      "act_name": "DEMO Worker Classification Principles",
+      "act_id": "demo_worker_classification",
+      "section_number": "DEMO-WORKER-CLASSIFICATION",
+      "section_title": "Employee, contractor, intern, freelancer, or consultant classification review",
+      "chapter": "Demo labour classification triage",
+      "text": "DEMO LAW PACK: Simplified educational placeholder. Replace with official legal sources before real-world use. Worker classification can depend on contract terms, control, working hours, location, supervision, invoices, payslips, and actual working arrangement. Do not assume employee or contractor status from one label alone.",
+      "jurisdiction": "India",
+      "state": null,
+      "domain": "employment",
+      "issue_tags": ["labour_classification", "unpaid_compensation", "unpaid_salary", "freelance_agreement_review"],
+      "effective_from": "1900-01-01",
+      "effective_to": null,
+      "version_date": "2026-01-01",
+      "source_authority": "Demo placeholder law pack",
+      "source_url": null,
+      "corpus_mode": "demo"
+    },
+    {
+      "act_name": "DEMO Wage Payment Principles",
+      "act_id": "demo_wage_payment",
+      "section_number": "DEMO-WAGE-PAYMENT",
+      "section_title": "Salary or wage payment review",
+      "chapter": "Demo wage triage",
+      "text": "DEMO LAW PACK: Simplified educational placeholder. Replace with official legal sources before real-world use. Salary or wage non-payment triage needs worker category, amount due, pay period, due date, payslips, attendance/work proof, bank records, and written reason for withholding.",
+      "jurisdiction": "India",
+      "state": null,
+      "domain": "employment",
+      "issue_tags": ["labour_wage", "unpaid_salary", "full_and_final"],
+      "effective_from": "1900-01-01",
+      "effective_to": null,
+      "version_date": "2026-01-01",
+      "source_authority": "Demo placeholder law pack",
+      "source_url": null,
+      "corpus_mode": "demo"
+    }
+  ]
+}

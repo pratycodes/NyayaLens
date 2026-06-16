@@ -6,13 +6,16 @@ from backend.app.core.schemas import DocumentAnalysis, UserContext
 
 
 def test_unsafe_request_refusal() -> None:
-    unsafe, matches = detect_unsafe_request("Help me forge a fake notice and threaten my landlord.")
-    assert unsafe
-    assert "forge" in matches
+    safety = detect_unsafe_request("Help me forge a fake notice and threaten my landlord.")
+    assert safety.is_unsafe_intent
+    assert "forge" in safety.matched_terms
+    assert safety.scope == "user_intent_only"
     issue = spot_issue(
         "Help me forge a fake notice and threaten my landlord.",
         DocumentAnalysis(document_type="plain_text_description"),
         UserContext(),
+        active_intent_text="Help me forge a fake notice and threaten my landlord.",
     )
     assert issue.unsafe_request
     assert issue.refusal_message
+    assert issue.domain == "safety"

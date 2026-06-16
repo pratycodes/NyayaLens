@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import logging
 import math
 import re
 from functools import lru_cache
@@ -8,6 +9,7 @@ from functools import lru_cache
 from backend.app.config import get_settings
 
 TOKEN_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9_+-]*")
+LOGGER = logging.getLogger(__name__)
 
 
 class EmbeddingModel:
@@ -51,7 +53,11 @@ def get_embedding_model() -> EmbeddingModel:
         return HashingEmbeddingModel()
     try:
         return SentenceTransformerEmbeddingModel(settings.embedding_model)
-    except Exception:
+    except Exception as exc:
+        LOGGER.warning(
+            "Sentence-transformers backend unavailable; falling back to lightweight hashing: %s",
+            exc,
+        )
         return HashingEmbeddingModel()
 
 
